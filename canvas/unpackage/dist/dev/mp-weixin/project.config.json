@@ -23,7 +23,20 @@
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "",
+          "path": "",
+          "query": "",
+          "id": 0
+        },
+        {
+          "id": 1,
+          "name": "pages/index/countDown",
+          "pathName": "pages/index/countDown",
+          "query": ""
+        }
+      ]
     }
   }
 }

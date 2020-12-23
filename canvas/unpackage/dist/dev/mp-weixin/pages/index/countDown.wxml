@@ -1,0 +1,1 @@
+<view class="content"><canvas class="showCanvas" canvas-id="canvasCount" id="canvasCount"></canvas></view>

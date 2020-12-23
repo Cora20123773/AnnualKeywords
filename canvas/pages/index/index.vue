@@ -2,14 +2,14 @@
 	<view class="box" style="height: 500px;">
 		<canvas canvas-id="canvass" id="canvass" @error="canvasIdErrorCallback()">
 		</canvas>
-
 	</view>
 
 </template>
 
 <script>
 	export default {
-		components: {},
+		components: {
+		},
 		data() {
 			return {
 			}
