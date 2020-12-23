@@ -12,50 +12,33 @@
 		components: {},
 		data() {
 			return {
+				x: 0,
+				y: 0,
+				ctx: null,
 			}
 		},
-		onLoad() {
+		mounted() {				
+			this.drawCanvas();
 
-		},
-		onReady() {
-			this.createCanvas()
 		},
 		methods: {
 
-			createCanvas() {
+			drawCanvas(x,y) {
+				var ctx = uni.createCanvasContext('canvass');
 				var that = this;
 				//var canvas=this.document.getElementById("canvas");
-				var context = uni.createCanvasContext('canvass',that);
-				console.log(context);
-				//var ctx=this.canvas.getContext("2d");
-				//draw a line, 从（100，100）的位置到（700，700）
-				// context.moveto(100, 100)
-				// context.lineto(700, 700)
-				// context.stroke()//开始画
-				// context.draw();
-				context.setStrokeStyle("#00ff00")
-				context.setLineWidth(5)
-				context.rect(0, 0, 200, 200)
-				context.stroke()
-				context.setStrokeStyle("#ff0000")
-				context.setLineWidth(2)
-				context.moveTo(160, 100)
-				context.arc(100, 100, 60, 0, 2 * Math.PI, true)
-				context.moveTo(140, 100)
-				context.arc(100, 100, 40, 0, Math.PI, false)
-				context.moveTo(85, 80)
-				context.arc(80, 80, 5, 0, 2 * Math.PI, true)
-				context.moveTo(125, 80)
-				context.arc(120, 80, 5, 0, 2 * Math.PI, true)
-				context.stroke()
-				//debugger;
+				ctx.clearRect(0, 0, 1060, 700);
+				ctx.drawImage('../../static/logo.png', that.x, that.y, 150, 150); //画背景图
+				ctx.draw();
+				console.log("1");
+
 				setTimeout(function() {
 					console.log('666')
-					context.draw(false, (res) => {
-						console.log('cbk');
-						console.log(res);
-					})
-				}, 10)
+					ctx.clearRect(0,0,1060,700)
+					 that.x = that.x+1;
+					 that.y= that.y+1;
+					 that.drawCanvas(ctx,that.x, that.y);
+				}, 2000)
 				// context.clearRect(0, 0, 200, 200)
 				// context.draw(false, setTimeout((res) => {
 				// 	console.log('cbk');
@@ -63,6 +46,15 @@
 				// }, 1000))
 
 			},
+
+			// drawPic(ctx, personPic, posX, posY, name) { //绘制人物图标
+			// 	var _this = this;
+			// 	ctx.drawImage(personPic, parseFloat(posX) + _this.x, parseFloat(posY) + _this.y, 20, 27);
+			// 	ctx.font = "11px Arial";
+			// 	ctx.fillStyle = "black"
+			// 	ctx.fillText(name, parseFloat(posX) + _this.x + 25, parseFloat(posY) + _this.y + 15);
+			// },
+
 			canvasIdErrorCallback: function(e) {
 				console.log('cer');
 				console.error(e)
@@ -72,11 +64,8 @@
 	}
 </script>
 <style>
-	#canvass{
+	#canvass {
 		height: 100%;
 		width: 100%;
 	}
 </style>
-
-
-
