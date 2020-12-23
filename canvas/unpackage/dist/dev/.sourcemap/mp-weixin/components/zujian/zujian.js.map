@@ -1,1 +1,0 @@
-{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,oN;AACAA,UAAU,CAACC,eAAD,CAAV,C","file":"components/zujian/zujian.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './components/zujian/zujian.vue'\ncreatePage(Page)"],"sourceRoot":""}
