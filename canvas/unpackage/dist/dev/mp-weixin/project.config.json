@@ -13,18 +13,19 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
       "list": []
     },
+    "gamePlugin": {
+      "list": []
+    },
     "miniprogram": {
       "list": [
         {
+<<<<<<< HEAD
           "name": "",
           "path": "",
           "query": "",
@@ -35,6 +36,12 @@
           "name": "pages/index/countDown",
           "pathName": "pages/index/countDown",
           "query": ""
+=======
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+>>>>>>> aba86ad61ad19e458a7385ba6aa616ed2b2abd3f
         }
       ]
     }

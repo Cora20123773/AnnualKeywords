@@ -1,5 +1,5 @@
 
-#canvass{
+#canvass {
 	height: 100%;
 	width: 100%;
 }
