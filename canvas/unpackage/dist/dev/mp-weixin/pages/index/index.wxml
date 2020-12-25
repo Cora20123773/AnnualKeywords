@@ -1,1 +1,1 @@
-<view class="box" style="height:500px;"><canvas canvas-id="canvass" id="canvass" data-event-opts="{{[['error',[['canvasIdErrorCallback']]]]}}" binderror="__e"></canvas></view>
+<view class="box" style="height:500px;"><canvas canvas-id="canvass" id="canvass" data-event-opts="{{[['touchstart',[['touchStart',['$event']]]],['touchmove',[['touchMove',['$event']]]],['touchend',[['touchEnd',['$event']]]]]}}" bindtouchstart="__e" bindtouchmove="__e" bindtouchend="__e"></canvas></view>
