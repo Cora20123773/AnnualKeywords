@@ -1,15 +1,21 @@
 <template>
 	<view class="box" style="height: 500px;">
+<<<<<<< HEAD
 		<canvas canvas-id="canvass" id="canvass" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
 		</canvas>
 
+=======
+		<canvas canvas-id="canvass" id="canvass" @error="canvasIdErrorCallback()">
+		</canvas>
+>>>>>>> 189542a2eb712d9126029cd3924474197d9678be
 	</view>
 
 </template>
 
 <script>
 	export default {
-		components: {},
+		components: {
+		},
 		data() {
 			return {
 				x: 0,
