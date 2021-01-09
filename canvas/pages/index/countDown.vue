@@ -6,7 +6,7 @@
 
 <script>
 	// get digit array from external js file
-	import { digit } from '../../static/js/digits.js'
+	import { digit } from '../../common/js/digits.js'
 	export default{
 		data() {
 			return {
