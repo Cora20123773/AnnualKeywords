@@ -136,56 +136,78 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _animeMin = _interopRequireDefault(__webpack_require__(/*! common/js/anime.min.js */ 42));
+var _interactjs = _interopRequireDefault(__webpack_require__(/*! interactjs */ 41));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import VDragged from 'v-dragged'
 // import canvasDrag from 'wxa-comp-canvas-drag'
-var _default =
-{
-  components: {},
-  data: function data() {
-    return {
-      x: 0,
-      y: 0,
-      z: 0,
-      ctx: null,
-      src: '../../static/logo.png',
-      pos: {},
-      mov: {},
-      R_init: 500,
-      Sum: 360 / 10, //定义12个环形的圈圈
+var _default = { components: {}, data: function data() {return { angle: 0, // 旋转角度
+      x: 0, y: 0, z: 0, ctx: null, src: '../../static/logo.png', pos: {}, mov: {}, R_init: 500, Sum: 360 / 10, //定义12个环形的圈圈
       Sumy: 360 / 10, //纵向也有12个圈圈
       radius: 2, //居中半径
       r_add: 2, //半径增量
       scen: 20, //视角长度
       off: 600, //canvas偏移
       R: 0, //定义大圆半径，随着视角变大而变小
-      points: [],
-      p: {},
-      r: {} };
-
-  },
-  mounted: function mounted() {
+      points: [], p: {}, r: {} };}, onReady: function onReady() {
     // this.dragImage();
     // this.drawCanvas();
+    // var myElement = document.getElementById('rotate-area');
+    // var hammertime = new Hammer(myElement);
+    // hammertime.get('rotate').set({ enable: true });
+    // let that = this
+    // hammertime.on('rortate', function(ev) {
+    // 	that.angle += ev.angle;
+    // });
+
+    // let that = this;
+    // interact('.movable').gesturable({
+    //   listeners: {
+    //     move (event) {
+    //       that.angle += event.da
+    //     }
+    //   }
+    // })
+
   },
   methods: {
 

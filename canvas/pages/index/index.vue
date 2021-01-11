@@ -8,16 +8,19 @@
 		<!-- <view v-dragged="onDragged" style="position: absulote;">
 			<image lazy-load="true" src="../../static/blue.png"></image>
 		</view> -->
-		<movable-area class="movable">
-			<movable-view class="movable__element" direction="all" inertia="true" out-of-bounds="true">
-				<image style="width: 180vw; height: 130vh;" lazy-load="true" src="../../static/blue.png"></image>
+<!-- 		<movable-area class="movable" scale-area="true">
+			<movable-view class="movable__element" direction="all" inertia="true" out-of-bounds="true" scale="true">
+				<image style="width: 180vw; height: 130vh;" :style="{ transform: 'rotate(' + angle + 'deg)' }" lazy-load="true" src="../../static/blue.png"></image>
 			</movable-view>
-		</movable-area>
+		</movable-area> -->
 	</view>
 
 </template>
 
+<script src="../../common/js/hammer.min.js"></script>
 <script>
+	import anime from 'common/js/anime.min.js'
+	import interact from 'interactjs'
 	// import VDragged from 'v-dragged'
 	// import canvasDrag from 'wxa-comp-canvas-drag'
 
@@ -25,6 +28,8 @@
 		components: {},
 		data() {
 			return {
+				angle: 0, // 旋转角度
+
 				x: 0,
 				y: 0,
 				z: 0,
@@ -45,9 +50,26 @@
 				r: {},
 			}
 		},
-		mounted() {
+		onReady() {
 			// this.dragImage();
 			// this.drawCanvas();
+			// var myElement = document.getElementById('rotate-area');
+			// var hammertime = new Hammer(myElement);
+			// hammertime.get('rotate').set({ enable: true });
+			// let that = this
+			// hammertime.on('rortate', function(ev) {
+			// 	that.angle += ev.angle;
+			// });
+
+			// let that = this;
+			// interact('.movable').gesturable({
+			//   listeners: {
+			//     move (event) {
+			//       that.angle += event.da
+			//     }
+			//   }
+			// })
+			
 		},
 		methods: {
 
@@ -228,20 +250,19 @@
 	}
 </script>
 <style>
-	
 	.container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	/* 拖拽区域 */
 	.movable {
 		/* position: static; */
 		width: 100vw;
 		height: 100vh;
 	}
-	
+
 	/* 被拖拽元素 */
 	.movable__element {
 		/* position: static; */
@@ -250,7 +271,7 @@
 		width: 180vw;
 		height: 130vh;
 	}
-	
+
 	#myCanvas {
 		height: 100%;
 		width: 100%;

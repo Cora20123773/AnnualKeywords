@@ -1,1 +1,1 @@
-<view class="container"><movable-area class="movable"><movable-view class="movable__element" direction="all" inertia="true" out-of-bounds="true"><image style="width:180vw;height:130vh;" lazy-load="true" src="../../static/blue.png"></image></movable-view></movable-area></view>
+<view class="container"></view>

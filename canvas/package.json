@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animejs": "^3.2.1",
+    "interactjs": "^1.10.2",
     "v-dragged": "0.0.5",
     "wxa-comp-canvas-drag": "0.0.1"
   }
