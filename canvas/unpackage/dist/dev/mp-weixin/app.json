@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/JanToApril/JanToApril",
+    "pages/MayToJune/MayToJune",
+    "pages/JulToSep/JulToSep",
+    "pages/SepToDec/SepToDec",
     "pages/index/index",
     "pages/index/littlepeople",
     "pages/index/countDown"
@@ -12,5 +16,5 @@
     "backgroundColor": "#F8F8F8"
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap83.json"
+  "sitemapLocation": "sitemap51.json"
 }
