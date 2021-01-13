@@ -1,24 +1,31 @@
 <template>
 	<view class="wrapper">
-		<view class="button" @click="navigateToNext">navigate</view>
 		<swiper class="scene-swiper">
-			<swiper-item>
-				<view class="scene">4号门</view>
+			<swiper-item @click="openPopup">
+				<image class="swirl-in-fwd" src="../../static/phase2/gate4.png" lazy-load="true" mode="aspectFit"></image>
 			</swiper-item>
 			<swiper-item>
-				<view class="scene">东城</view>
+				<image class="" src="../../static/phase2/southCity.png" lazy-load="true" mode="aspectFit"></image>
 			</swiper-item>
 			<swiper-item>
 				<view class="scene">宿舍</view>
 			</swiper-item>
 		</swiper>
+		<view class="footer">
+			<view class="button" @click="navigateToNext">navigate</view>
+		</view>
+		<!-- 弹窗 -->
+		<uni-popup ref="popupForm" type="center">
+			<view class="popup-box">
+				SEM表单
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script>
-	
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
-	
+
 	export default {
 		components: {
 			uniPopup
@@ -29,6 +36,11 @@
 			}
 		},
 		methods: {
+
+			openPopup() {
+				this.$refs.popupForm.open()
+			},
+
 			navigateToNext() {
 				uni.navigateTo({
 					url: '/pages/JulToSep/JulToSep'
@@ -46,27 +58,38 @@
 		justify-content: center;
 		width: 100vw;
 		height: 100vh;
-		background-color: #808080;
 	}
-	
+
 	.scene-swiper {
 		width: 100vw;
+		height: 30vh;
 	}
-	
+
 	swiper-item {
 		display: flex;
 		justify-content: center;
 	}
-	
+
 	.scene {
 		width: 500upx;
 		height: 500upx;
-		background-color: #4CD964;
 	}
-	
+
 	.button {
 		width: 100upx;
 		height: 50upx;
 		background-color: #FFFFFF;
+	}
+
+	.popup-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 80vw;
+		height: auto;
+		padding: 50upx 0 50upx 0;
+		background-color: #FFFFFF;
+		border-radius: 10upx;
 	}
 </style>

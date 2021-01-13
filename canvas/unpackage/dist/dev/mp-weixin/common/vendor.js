@@ -8178,7 +8178,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 42:
+/***/ 48:
 /*!*************************************************************************!*\
   !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/common/js/anime.min.js ***!
   \*************************************************************************/
@@ -8196,7 +8196,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 43:
+/***/ 49:
 /*!***********************************************************************************************!*\
   !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/node_modules/interactjs/dist/interact.min.js ***!
   \***********************************************************************************************/
@@ -8208,7 +8208,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 60:
+/***/ 66:
 /*!**********************************************************************!*\
   !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/common/js/digits.js ***!
   \**********************************************************************/
@@ -8352,7 +8352,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 
 /***/ }),
 
-/***/ 81:
+/***/ 74:
 /*!********************************************************************************!*\
   !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
   \********************************************************************************/
@@ -8360,7 +8360,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 82));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 75));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -8389,7 +8389,7 @@ var config = {
 
 /***/ }),
 
-/***/ 82:
+/***/ 75:
 /*!**********************************************************************************!*\
   !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/components/uni-popup/message.js ***!
   \**********************************************************************************/
