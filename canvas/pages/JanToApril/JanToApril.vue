@@ -4,13 +4,16 @@
 		<view class="header focus-in-expand-fwd">2020</view>
 		<view class="message-list">
 			<view class="message-list__box scale-in-top" @click="openPopup(1)">
-				推迟开学
+				<view>推迟开学</view>
+				<view v-if="hint == 1">点我</view>
 			</view>
 			<view class="message-list__box scale-in-top" style="animation-delay: .3s;" @click="openPopup(2)">
-				网课
+				<view>网课</view>
+				<view v-if="hint == 2">点我</view>
 			</view>
 			<view class="message-list__box scale-in-top" style="animation-delay: .5s;" @click="openPopup(3)">
-				捐学费
+				<view>捐学费</view>
+				<view v-if="hint == 3">点我</view>
 			</view>
 		</view>
 		<view class="footer">
@@ -33,8 +36,8 @@
 		<uni-popup ref="popupDownload" type="center">
 			<view class="popup-box">
 				网课下载进度条
-				<progress v-if="progress" class="progress-bar" percent="80" activeColor="blue" active="true" stroke-width="8" show-info="true"
-				 border-radius="10" duration="60" @activeend="showPrompt" />
+				<progress v-if="progress" class="progress-bar" percent="80" activeColor="blue" active="true" stroke-width="8"
+				 show-info="true" border-radius="10" duration="60" @activeend="showPrompt" />
 				<view v-if="downloadPrompt" class="text-input">距下载完成还需1000分钟…</view>
 			</view>
 		</uni-popup>
@@ -59,6 +62,8 @@
 		},
 		data() {
 			return {
+				current: [0, 0, 0], // 邮件是否被点击
+				hint: 1, // 用户当前应该点击的邮件
 				progress: false, // 是否显示进度条
 				downloadPrompt: false, // 是否显示下载提示
 			}
@@ -84,6 +89,22 @@
 						this.$refs.popupFee.open()
 						break
 				}
+				this.current[index - 1] = 1
+				this.showHint()
+			},
+			
+			/**
+			 * 显示下一个应该点击的邮件
+			 */
+			showHint() {
+				let i = 0
+				for (i; i < this.current.length; i++) {
+					if (this.current[i] == 0) {
+						this.hint = i + 1
+						return
+					}
+				}
+				this.hint = 0
 			},
 
 			showPrompt() {
@@ -139,6 +160,8 @@
 	}
 
 	.message-list__box {
+		display: flex;
+		flex-direction: column;
 		width: 90vw;
 		height: 15vh;
 		background-color: #F0AD4E;
