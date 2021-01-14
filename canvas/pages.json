@@ -1,8 +1,24 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	//画笑脸
+		// 	"path": "pages/index/animation",
+		// 	"style": {
+		// 		"navigationBarTitleText": "uni-app"
+		// 	}
+		// },
 		{
 			//画笑脸
-			"path": "pages/index/index",
+			"path": "pages/index/animation",
+			"style": {
+			            "usingComponents": {
+			                "custom": "/wxcomponents/slot-machine/index"
+						}
+			}
+		},
+		{
+			//传送带
+			"path": "pages/index/gift-machine",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}

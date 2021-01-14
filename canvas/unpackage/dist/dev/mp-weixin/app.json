@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/index/animation",
+    "pages/index/gift-machine",
     "pages/index/littlepeople",
     "pages/index/countDown"
   ],
@@ -11,5 +12,6 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap66.json"
 }

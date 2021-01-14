@@ -18,13 +18,13 @@
 				src: '../../static/logo.png',
 				pos: {},
 				mov: {},
-				R_init: 500,
-				Sum: 360 / 10, //定义12个环形的圈圈
-				Sumy: 360 / 10, //纵向也有12个圈圈
-				radius: 2, //居中半径
-				r_add: 2, //半径增量
-				scen: 20, //视角长度
-				off: 600, //canvas偏移
+				R_init: 50,
+				Sum: 360 / 100, //定义12个环形的圈圈
+				Sumy: 360 / 100, //纵向也有12个圈圈
+				radius: 0.2, //居中半径
+				r_add: 0.2, //半径增量
+				scen: 2, //视角长度
+				off: 60, //canvas偏移
 				R: 0, //定义大圆半径，随着视角变大而变小
 				points: [],
 				p: {},
@@ -72,7 +72,7 @@
 				var y = that.y;
 				var z = that.z;
 				var r = that.r;
-				that.R = 500 / (that.scen + that.R_init) * 500
+				that.R = 50 / (that.scen + that.R_init) * 50 
 				for (var i = 0; i < that.Sum; i++) { //横坐标方向 12个 1
 					for (var e = 0; e < that.Sumy; e++) { //纵坐标方向 12个 1
 						x = Math.cos(i * Math.PI * 2 / that.Sum) * Math.sin(e * Math.PI * 2 / that.Sumy) * that.R
@@ -94,6 +94,7 @@
 					ctx.beginPath()
 					ctx.arc(x + that.off, y + that.off, that.radius, 0, 2 * Math.PI)
 					console.log(x + that.off, y + that.off, that.radius)
+					debugger;
 					ctx.stroke()
 					ctx.draw()
 				})

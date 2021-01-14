@@ -4,33 +4,36 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false
+    "urlCheck": false,
+    "es6": true
   },
   "compileType": "miniprogram",
   "libVersion": "",
   "appid": "wxceee7651a4bd8583",
   "projectname": "canvas",
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
+    "plugin": {
       "list": []
     },
     "game": {
-      "current": -1,
+      "list": []
+    },
+    "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "current": 0,
       "list": [
         {
-          "name": "",
-          "path": "",
+          "name": "pages/index/gift-machine",
+          "pathName": "pages/index/gift-machine",
           "query": "",
-          "id": 0
+          "scene": null
+        },
+        {
+          "name": "pages/index/animation",
+          "pathName": "pages/index/animation",
+          "query": "",
+          "scene": null
         }
       ]
     }
