@@ -21,16 +21,13 @@
 		</view>
 		<!-- 弹窗 -->
 		<uni-popup ref="popupEmail" type="center">
-			<view class="popup-box">
-				推迟邮件
-				<swiper class="scene-swiper">
-					<swiper-item>
-						<image class="" src="../../static/phase2/gate4.png" lazy-load="true" mode="aspectFit"></image>
-					</swiper-item>
-					<swiper-item>
-						<image class="" src="../../static/phase2/southCity.png" lazy-load="true" mode="aspectFit"></image>
-					</swiper-item>
-				</swiper>
+			<view class="email-container">
+				<image class="email-image slide-in-blurred-top" src="../../static/phase1/1.1.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 40upx; left: 40upx; animation-delay: .5s;" src="../../static/phase1/1.2.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 70upx; left: 70upx; animation-delay: 1s;" src="../../static/phase1/1.3.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1.5s;" src="../../static/phase1/1.4.png"></image>
+				<image class="email-image slide-in-blurred-bottom" style="top: 300upx; left: 50upx; animation-delay: 2s;" src="../../static/phase1/1.5.png"></image>
+				<image class="email-image fade-in" style="top: 300upx; left: 30upx; animation-delay: 2.5s;" src="../../static/phase1/watcher.png"></image>
 			</view>
 		</uni-popup>
 		<uni-popup ref="popupDownload" type="center">
@@ -92,7 +89,7 @@
 				this.current[index - 1] = 1
 				this.showHint()
 			},
-			
+
 			/**
 			 * 显示下一个应该点击的邮件
 			 */
@@ -191,5 +188,19 @@
 	swiper-item {
 		display: flex;
 		justify-content: center;
+	}
+
+	.email-container {
+		position: fixed;
+		left: 0;
+		top: 20vh;
+		width: 100vw;
+		height: auto;
+	}
+
+	.email-image {
+		position: absolute;
+		left: 10upx;
+		top: 10upx;
 	}
 </style>
