@@ -32,6 +32,7 @@
 		justify-content: center;
 		width: 100vw;
 		position: fixed;
+		z-index: 1;
 		bottom: 30upx;
 	}
 
@@ -267,7 +268,7 @@
 	}
 
 	.free-fall {
-		animation: free-fall 3s ease 1.1s normal both;
+		animation: free-fall 3s ease 1s normal both;
 	}
 	
 	/* ----------------------------------------------

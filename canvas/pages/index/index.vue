@@ -20,7 +20,7 @@
 <script src="../../common/js/hammer.min.js"></script>
 <script>
 	import anime from 'common/js/anime.min.js'
-	import interact from 'interactjs'
+	// import interact from 'interactjs'
 	// import VDragged from 'v-dragged'
 	// import canvasDrag from 'wxa-comp-canvas-drag'
 
