@@ -1,23 +1,48 @@
 <template>
 	<view>
 		<image class="background" lazy-load="true" src="../../static/phase1/background.png"></image>
-		<view class="header focus-in-expand-fwd">2020</view>
+		<view class="header focus-in-expand-fwd">
+			<view class="header-year">2020</view>
+			<view class="header-season">Winter - Spring</view>
+		</view>
 		<view class="message-list">
 			<view class="message-list__box scale-in-top" @click="openPopup(1)">
-				<view>推迟开学</view>
-				<view v-if="hint == 1">点我</view>
+				<view class="message-list__line">
+					<view class="message-list__type">
+						<image lazy-load="true" src="../../static/phase1/Outlook.png" class="message-list__icon"></image>
+						Outlook
+					</view>
+					<view class="message-list__time">2m ago</view>
+				</view>
+				<view class="message-list__content">推迟开学</view>
+				<image v-if="hint == 1" lazy-load="true" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 			<view class="message-list__box scale-in-top" style="animation-delay: .3s;" @click="openPopup(2)">
-				<view>网课</view>
-				<view v-if="hint == 2">点我</view>
+				<view class="message-list__line">
+					<view class="message-list__type">
+						<image lazy-load="true" src="../../static/phase1/Flipgrid.png" class="message-list__icon"></image>
+						Flipgrid
+					</view>
+					<view class="message-list__time">4m ago</view>
+				</view>
+				<view class="message-list__content">网课作业通知</view>
+				<image v-if="hint == 2" lazy-load="true" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 			<view class="message-list__box scale-in-top" style="animation-delay: .5s;" @click="openPopup(3)">
-				<view>捐学费</view>
-				<view v-if="hint == 3">点我</view>
+				<view class="message-list__line">
+					<view class="message-list__type">
+						<image lazy-load="true" src="../../static/phase1/wechat.png" class="message-list__icon"></image>
+						WeChat
+					</view>
+					<view class="message-list__time">6m ago</view>
+				</view>
+				<view class="message-list__content">"捐"学费</view>
+				<image v-if="hint == 3" lazy-load="true" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 		</view>
 		<view class="footer">
-			<view class="button" @click="navigateToNext">navigate</view>
+			<image v-if="hint == 0" lazy-load="true" src="../../static/phase1/arrow.png" class="heartbeat" style="width: 80upx; height: 80upx;"
+			 @click="navigateToNext"></image>
 		</view>
 		<!-- 弹窗 -->
 		<uni-popup ref="popupEmail" type="center">
@@ -32,15 +57,21 @@
 		</uni-popup>
 		<uni-popup ref="popupDownload" type="center">
 			<view class="popup-box">
-				网课下载进度条
+				<image lazy-load="true" src="../../static/phase1/download.png" style="width: 250upx; height: 300upx; margin-bottom: 30upx;"></image>
+				视频上传中
 				<progress v-if="progress" class="progress-bar" percent="80" activeColor="blue" active="true" stroke-width="8"
 				 show-info="true" border-radius="10" duration="60" @activeend="showPrompt" />
 				<view v-if="downloadPrompt" class="text-input">距下载完成还需1000分钟…</view>
 			</view>
 		</uni-popup>
 		<uni-popup ref="popupFee" type="center">
-			<view class="popup-box">
-				学费推文
+			<view class="email-container">
+				<image class="email-image slide-in-blurred-top" src="../../static/phase1/2.1.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 50upx; animation-delay: .5s;" src="../../static/phase1/2.2.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1s;" src="../../static/phase1/2.3.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 400upx; animation-delay: 1.5s;" src="../../static/phase1/2.4.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 450upx; left: 50upx; animation-delay: 2s;" src="../../static/phase1/2.5.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 500upx; left: 100upx; animation-delay: 2.5s;" src="../../static/phase1/2.6.png"></image>
 			</view>
 		</uni-popup>
 	</view>
@@ -60,7 +91,7 @@
 		data() {
 			return {
 				current: [0, 0, 0], // 邮件是否被点击
-				hint: 1, // 用户当前应该点击的邮件
+				hint: 1, // 用户当前应该点击的邮件 (0表示都已点击)
 				progress: false, // 是否显示进度条
 				downloadPrompt: false, // 是否显示下载提示
 			}
@@ -140,15 +171,26 @@
 		z-index: -99;
 	}
 
-	.button {
-		width: 150upx;
-		height: 50upx;
-		background-color: #FFFFFF;
+	.header-year {
+		font-size: 112upx;
+		font-weight: 500;
+		color: #F7F7F7;
+		line-height: 17upx;
+		letter-spacing: 10upx;
+		margin-bottom: 100upx;
+	}
+
+	.header-season {
+		font-size: 39upx;
+		font-weight: 500;
+		color: #F7F7F7;
+		line-height: 11upx;
+		letter-spacing: 5upx;
 	}
 
 	.message-list {
-		/* 		width: 100vw; */
-		height: 50vh;
+		/* width: 100vw; */
+		height: 700upx;
 		padding: 10upx;
 		display: flex;
 		flex-direction: column;
@@ -159,13 +201,74 @@
 	.message-list__box {
 		display: flex;
 		flex-direction: column;
-		width: 90vw;
-		height: 15vh;
-		background-color: #F0AD4E;
+		position: relative;
+		width: 80vw;
+		height: 130upx;
+		padding: 40upx;
+		/* background: #FFFFFF; */
+		border-radius: 10px;
+		color: #314877;
+		font-weight: 550;
+		font-size: 32upx;
+		letter-spacing: 5upx;
+		/* filter: blur(1px) opacity(0.4); */
+		transition: 0.2s;
+	}
+
+	.message-list__box::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: 10px;
+		background-color: #FFFFFF;
+		filter: opacity(0.5);
+		z-index: -1;
+	}
+	
+	.message-list__box:active {
+		width: 75vw;
+		height: 110upx;
+		/* border: 8upx solid #e2f0ff; */
+		transition: 0.2s;
+	}
+
+	.message-list__line {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 30upx;
+		height: 50upx;
+	}
+
+	.message-list__type {
+		/* position: relative;
+		left: 32upx;
+		top: 40upx; */
+		display: flex;
+		align-items: center;
+	}
+
+	.message-list__icon {
+		width: 50upx;
+		height: 50upx;
+		margin-right: 30upx;
+	}
+
+	.message-list__gesture {
+		position: absolute;
+		right: -20upx;
+		bottom: -20upx;
+		width: 90upx;
+		height: 90upx;
 	}
 
 	.progress-bar {
 		width: 60vw;
+		margin-top: 30upx;
+		margin-bottom: 30upx;
 	}
 
 	.popup-box {
