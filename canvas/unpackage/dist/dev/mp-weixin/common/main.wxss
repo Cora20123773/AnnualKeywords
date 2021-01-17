@@ -519,6 +519,13 @@ template {
 @media (prefers-reduced-motion), (print){.magictime{-webkit-animation:unset!important;animation:unset!important;-webkit-transition:none!important;transition:none!important}}
 
 /*每个页面公共css */
+.background {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -99;
+}
 .header {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -887,8 +894,8 @@ from {
 }
 }
 .slide-in-top {
-	-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* 自由落体遮罩动画 */

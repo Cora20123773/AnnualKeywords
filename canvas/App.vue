@@ -17,6 +17,14 @@
 	@import url("/common/css/magic.min.css");
 
 	/*每个页面公共css */
+	
+	.background {
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: -99;
+	}
 
 	.header {
 		display: flex;
@@ -244,7 +252,7 @@
 	}
 
 	.slide-in-top {
-		animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	}
 
 	/* 自由落体遮罩动画 */

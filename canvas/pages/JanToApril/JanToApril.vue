@@ -163,14 +163,6 @@
 </script>
 
 <style scoped>
-	.background {
-		position: fixed;
-		top: 0;
-		width: 100vw;
-		height: 100vh;
-		z-index: -99;
-	}
-
 	.header-year {
 		font-size: 112upx;
 		font-weight: 500;

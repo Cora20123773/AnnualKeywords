@@ -1,15 +1,16 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			// 1-4
-			"path": "pages/JanToApril/JanToApril",
-			"style": {
-				"navigationStyle": "custom",
-				"enablePullDownRefresh": false,
-				"disableScroll": true
-			}
+		// {
+		// 	// 1-4
+		// 	"path": "pages/JanToApril/JanToApril",
+		// 	"style": {
+		// 		"navigationStyle": "custom",
+		// 		"enablePullDownRefresh": false,
+		// 		"disableScroll": true
+		// 	}
 
-		}, {
+		// }, 
+		{
 			// 5-6
 			"path": "pages/MayToJune/MayToJune",
 			"style": {
