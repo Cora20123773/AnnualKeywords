@@ -1,5 +1,6 @@
 <template>
 	<view class="wrapper">
+		<image class="background" lazy-load="true" src="../../static/phase3/background.gif"></image>
 		<view v-if="circle" class="header slide-in-top" :style="{ height: top + height + 5 + 'px' }">
 			<view class="header-bar">Moments</view>
 		</view>

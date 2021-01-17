@@ -7936,9 +7936,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 39:
-/*!*************************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/common/js/anime.min.js ***!
-  \*************************************************************************/
+/*!***********************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/common/js/anime.min.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7954,9 +7954,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!*************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/pages.json ***!
-  \*************************************************************/
+/*!***********************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/pages.json ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7965,9 +7965,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 56:
-/*!**********************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/common/js/digits.js ***!
-  \**********************************************************************/
+/*!********************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/common/js/digits.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8109,9 +8109,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 /***/ }),
 
 /***/ 64:
-/*!********************************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
-  \********************************************************************************/
+/*!******************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8146,9 +8146,9 @@ var config = {
 /***/ }),
 
 /***/ 65:
-/*!**********************************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/components/uni-popup/message.js ***!
-  \**********************************************************************************/
+/*!********************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/components/uni-popup/message.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
