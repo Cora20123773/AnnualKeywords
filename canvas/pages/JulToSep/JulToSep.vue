@@ -1,7 +1,26 @@
 <template>
 	<view class="wrapper">
 		<image class="background" lazy-load="true" src="../../static/phase3/background.gif"></image>
-		<view v-if="circle" class="header slide-in-top" :style="{ height: top + height + 5 + 'px' }">
+		<view class="scene slideInRight" style="animation-delay: 5s;">
+			<view class="scene" :class="{ slideOutLeft: scene > 1 }">
+				<image class="scene-image" src="../../static/phase3/tower.PNG" lazy-load="true" mode="aspectFit"></image>
+				<image class="free-fall" style="animation-delay: 6s;" src="../../static/phase3/ball.PNG" lazy-load="true" mode="aspectFit"></image>
+			</view>
+		</view>
+		<view class="scene" :class="{ slideInRight: scene == 2, hide: scene != 2 || hideLibrary }">
+			<image class="scene-image" src="../../static/phase3/library.PNG" lazy-load="true" mode="aspectFit" @click.once="scroll"></image>
+			<image class="gesture heartbeat" lazy-load="true" src="../../static/phase3/gesture.png"></image>
+		</view>
+		<view v-if="scene == 2" class="placeholder"></view>
+		<view v-if="scene >= 2">
+			<view style="width: 100vw; height: 20vh;"></view>
+			<image id="pyq" class="friend-circle" src="../../static/phase3/pyq.png" lazy-load="true" mode="widthFix"></image>
+			<view style="width: 100vw; height: 50upx; background-color: #FFFFFF; margin-top: -30upx;"></view>
+		</view>
+		<view v-if="scene != 2" class="footer">
+			<view class="button" @click="transferScene">navigate</view>
+		</view>
+		<!-- 		<view v-if="circle" class="header slide-in-top" :style="{ height: top + height + 5 + 'px' }">
 			<view class="header-bar">Moments</view>
 		</view>
 		<view v-if="circle" class="article"></view>
@@ -21,7 +40,7 @@
 			</swiper>
 			<view v-if="circle" class="placeholder"></view>
 			<view v-if="circle" class="swiper-mask"></view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -34,26 +53,37 @@
 		},
 		data() {
 			return {
-				top: 0,
-				height: 0,
-				circle: false, // 是否显示朋友圈
+				scene: 1, // 1:分数线，2:新图
+				hideLibrary: false, //隐藏图书馆照片
 			}
 		},
 		onLoad() {
-			this.top = uni.getMenuButtonBoundingClientRect().top
-			this.height = uni.getMenuButtonBoundingClientRect().height
+			// this.top = uni.getMenuButtonBoundingClientRect().top
+			// this.height = uni.getMenuButtonBoundingClientRect().height
 		},
 		methods: {
 
-			showCircle() {
-				this.circle = true // 是否显示朋友圈
+			transferScene() {
+				if (this.scene == 3) {
+					uni.navigateTo({
+						url: '/pages/SepToDec/SepToDec'
+					});
+				} else {
+					// this.picChecked = false
+					this.scene++
+				}
 			},
 
-			navigateToNext() {
-				uni.navigateTo({
-					url: '/pages/SepToDec/SepToDec'
+			scroll() {
+				this.hideLibrary = true
+				uni.pageScrollTo({
+					selector: '#pyq',
+					duration: 500,
+					complete: () => {
+						this.scene++
+					}
 				});
-			}
+			},
 		}
 	}
 </script>
@@ -68,39 +98,38 @@
 		height: 100vh; */
 	}
 
+	.scene {
+		/* 		display: flex;
+		justify-content: center;
+		align-items: center; */
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+	}
+
+	.scene-image {
+		/* 		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3; */
+		width: 100vw;
+		height: 80vh;
+	}
+
+	.gesture {
+		position: fixed;
+		right: 250upx;
+		bottom: 200upx;
+		width: 90upx;
+		height: 90upx;
+	}
+
 	.placeholder {
 		width: 100vw;
-		height: 30vh;
-	}
-
-	.swiper-mask {
-		position: fixed;
-		z-index: 0;
-		top: 0;
-		width: 100vw;
 		height: 100vh;
-	}
-
-	.scene-swiper {
-		/* 		position: fixed;
-		z-index: -1;
-		top: 0; */
-		width: 100vw;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	swiper-item {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.scene {
-		width: 500upx;
-		height: 500upx;
 	}
 
 	.button {
@@ -109,41 +138,8 @@
 		background-color: #FFFFFF;
 	}
 
-	.library {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		z-index: -1;
-		transform: translate(-50%, -50%);
-		transition: .5s ease;
-	}
-
-	.libraryAfter {
-		top: 40%;
-		left: 35%;
-		transform: translate(-50%, -50%);
-		transition: .5s ease;
-	}
-
-	.header {
-		position: fixed;
-		z-index: 1;
-		top: 0;
+	.friend-circle {
 		width: 100vw;
-		background-color: #C0C0C0;
-	}
-	
-	.header-bar {
-		position: absolute;
-		bottom: 10px;
-	}
-
-	.article {
-		position: fixed;
-		z-index: -2;
-		top: 13vh;
-		width: 100vw;
-		height: 120vh;
-		background-color: #FFFFFF;
+		padding-top: 200upx;
 	}
 </style>

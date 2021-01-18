@@ -91,10 +91,6 @@
 					this.scene++
 				}
 			},
-
-			openPopup() {
-				this.$refs.popupForm.open()
-			},
 		}
 	}
 </script>

@@ -139,20 +139,6 @@
 				this.downloadPrompt = true
 			},
 
-			scrollToCourse() {
-				uni.pageScrollTo({
-					selector: '#course',
-					duration: 1000
-				});
-			},
-
-			scrollToFee() {
-				uni.pageScrollTo({
-					selector: '#fee',
-					duration: 1000
-				});
-			},
-
 			navigateToNext() {
 				uni.navigateTo({
 					url: '/pages/MayToJune/MayToJune'
@@ -273,16 +259,6 @@
 		padding: 50upx 0 50upx 0;
 		background-color: #FFFFFF;
 		border-radius: 10upx;
-	}
-
-	.scene-swiper {
-		width: 80vw;
-		height: 30vh;
-	}
-
-	swiper-item {
-		display: flex;
-		justify-content: center;
 	}
 
 	.email-container {

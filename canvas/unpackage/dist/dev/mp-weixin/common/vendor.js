@@ -7935,7 +7935,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 39:
+/***/ 31:
 /*!***********************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/common/js/anime.min.js ***!
   \***********************************************************************************/
@@ -7964,7 +7964,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 56:
+/***/ 48:
 /*!********************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/common/js/digits.js ***!
   \********************************************************************************/
@@ -8108,7 +8108,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 
 /***/ }),
 
-/***/ 64:
+/***/ 56:
 /*!******************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
   \******************************************************************************************/
@@ -8116,7 +8116,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 65));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 57));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -8145,7 +8145,7 @@ var config = {
 
 /***/ }),
 
-/***/ 65:
+/***/ 57:
 /*!********************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/components/uni-popup/message.js ***!
   \********************************************************************************************/
