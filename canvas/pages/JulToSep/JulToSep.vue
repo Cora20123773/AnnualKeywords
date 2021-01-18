@@ -1,20 +1,20 @@
 <template>
 	<view class="wrapper">
-		<image class="background" lazy-load="true" src="../../static/phase3/background.gif"></image>
+		<image class="background" src="https://i.loli.net/2021/01/18/VL3tn6xXvh5Rrs9.gif"></image>
 		<view class="scene slideInRight" style="animation-delay: 5s;">
 			<view class="scene" :class="{ slideOutLeft: scene > 1 }">
-				<image class="scene-image" src="../../static/phase3/tower.PNG" lazy-load="true" mode="aspectFit"></image>
-				<image class="free-fall" style="animation-delay: 6s;" src="../../static/phase3/ball.PNG" lazy-load="true" mode="aspectFit"></image>
+				<image class="scene-image" src="https://i.loli.net/2021/01/18/wDYRCUVNHOyg2Ib.png" mode="aspectFit"></image>
+				<image class="free-fall" style="animation-delay: 6s;" src="../../static/phase3/ball.PNG" mode="aspectFit"></image>
 			</view>
 		</view>
 		<view class="scene" :class="{ slideInRight: scene == 2, hide: scene != 2 || hideLibrary }">
-			<image class="scene-image" src="../../static/phase3/library.PNG" lazy-load="true" mode="aspectFit" @click.once="scroll"></image>
-			<image class="gesture heartbeat" lazy-load="true" src="../../static/phase3/gesture.png"></image>
+			<image class="scene-image" src="https://i.loli.net/2021/01/18/WZ7wRUTducJ4stC.png" mode="aspectFit" @click.once="scroll"></image>
+			<image class="gesture heartbeat" src="../../static/phase3/gesture.png"></image>
 		</view>
 		<view v-if="scene == 2" class="placeholder"></view>
 		<view v-if="scene >= 2">
 			<view style="width: 100vw; height: 20vh;"></view>
-			<image id="pyq" class="friend-circle" src="../../static/phase3/pyq.png" lazy-load="true" mode="widthFix"></image>
+			<image id="pyq" class="friend-circle" src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" mode="widthFix"></image>
 			<view style="width: 100vw; height: 50upx; background-color: #FFFFFF; margin-top: -30upx;"></view>
 		</view>
 		<view v-if="scene != 2" class="footer">

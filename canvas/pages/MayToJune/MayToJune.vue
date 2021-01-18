@@ -1,55 +1,54 @@
 <template>
 	<view class="wrapper">
-		<image class="background" lazy-load="true" src="../../static/phase2/background.jpg"></image>
+		<image class="background" src="https://i.loli.net/2021/01/18/8xMDkqaAwzh5ibZ.jpg"></image>
 		<view v-if="scene == 1" class="scene">
-			<image class="gate slide-in-top" src="../../static/phase2/gate4.png" lazy-load="true" mode="aspectFit" @click="checkPic"></image>
+			<image class="gate slide-in-top" src="https://i.loli.net/2021/01/18/wBL62QMY5bd4ypt.png" mode="aspectFit" @click="checkPic"></image>
 			<view v-if="picChecked" class="footer">
 				<view class="button" @click="transferScene">navigate</view>
 			</view>
 			<view v-else class="fade-in" style="animation-delay: 0.7s;">
-				<image class="gesture heartbeat" lazy-load="true" src="../../static/phase2/gesture.png"></image>
+				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
 			</view>
 			<view v-if="picChecked" class="form">
 				<!-- 点击第一张SAMS表单出现SAMS2表单 -->
-				<image class="form-element slide-in-blurred-top" src="../../static/phase2/sam1.png" lazy-load="true" mode="aspectFit"></image>
-				<image class="form-element slide-in-blurred-top" style="animation-delay: 0.5s;" src="../../static/phase2/sam2.png"
-				 lazy-load="true" mode="aspectFit"></image>
-				<image class="form-element fade-in" style="animation-delay: 1s;" src="../../static/phase2/sam3.png" lazy-load="true"
+				<image class="form-element slide-in-blurred-top" src="https://i.loli.net/2021/01/18/YvDgidIUbWG6HCl.png" mode="aspectFit"></image>
+				<image class="form-element slide-in-blurred-top" style="animation-delay: 0.5s;" src="https://i.loli.net/2021/01/18/9BTzP6OWkiFsCJv.png"
 				 mode="aspectFit"></image>
+				<image class="form-element fade-in" style="animation-delay: 1s;" src="../../static/phase2/sam3.png" mode="aspectFit"></image>
 			</view>
 		</view>
 		<view v-if="scene == 2" class="scene">
-			<image class="restuarant slide-in-top" src="../../static/phase2/southCity.png" lazy-load="true" mode="aspectFit"
+			<image class="restuarant slide-in-top" src="https://i.loli.net/2021/01/18/IesKTtjAQdDkCaB.png" mode="aspectFit"
 			 @click="checkPic"></image>
 			<view v-if="picChecked" class="footer">
 				<view class="button" @click="transferScene">navigate</view>
 			</view>
 			<view v-else class="fade-in" style="animation-delay: 0.7s;">
-				<image class="gesture heartbeat" lazy-load="true" src="../../static/phase2/gesture.png"></image>
+				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
 			</view>
 			<view v-if="picChecked" class="form">
-				<image class="form-element slide-in-blurred-top" src="../../static/phase2/food.png" lazy-load="true" mode="aspectFit"></image>
+				<image class="form-element slide-in-blurred-top" src="../../static/phase2/food.png" mode="aspectFit"></image>
 			</view>
 		</view>
 		<view v-if="scene > 2" class="scene">
-			<image v-if="clickNum <= 1" class="dormitory slide-in-top" :class="{ dormitoryBg: picChecked }" src="../../static/phase2/dorm1.png"
-			 lazy-load="true" mode="aspectFit" @click="checkDorm"></image>
-			<image v-if="clickNum == 2" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="../../static/phase2/dorm2.png"
-			 lazy-load="true" mode="aspectFit" @click="checkDorm"></image>
-			<image v-if="clickNum == 3" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="../../static/phase2/dorm3.png"
-			 lazy-load="true" mode="aspectFit" @click="checkDorm"></image>
-			<image v-if="clickNum == 4" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="../../static/phase2/dorm4.png"
-			 lazy-load="true" mode="aspectFit" @click="checkDorm"></image>
-			<image v-if="clickNum >= 5" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="../../static/phase2/dorm5.png"
-			 lazy-load="true" mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum <= 1" class="dormitory slide-in-top" :class="{ dormitoryBg: picChecked }" src="https://i.loli.net/2021/01/18/wpvx1fIZCQ9rP3j.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum == 2" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/DQBKjOXLMS3bcNA.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum == 3" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/pnZBQ1qoD5MYF87.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum == 4" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/wizVWItSTM4xuf1.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum >= 5" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/bR8v4ZVhyI2ewFz.png"
+			 mode="aspectFit" @click="checkDorm"></image>
 			<view v-if="picChecked && clickNum >= 5" class="footer">
 				<view class="button" @click="transferScene">navigate</view>
 			</view>
 			<view v-if="!picChecked" class="fade-in" style="animation-delay: 0.7s;">
-				<image class="gesture heartbeat" lazy-load="true" src="../../static/phase2/gesture.png"></image>
+				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
 			</view>
 			<view v-else class="form" style="top: -100upx;">
-				<image class="form-element slide-in-blurred-top" src="../../static/phase2/dormitory.png" lazy-load="true" mode="aspectFit"></image>
+				<image class="form-element slide-in-blurred-top" src="../../static/phase2/dormitory.png" mode="aspectFit"></image>
 				<view class="form-prompt focus-in-expand-fwd" style="animation-delay: 0.5s;">试着点亮灯光吧!</view>
 			</view>
 		</view>
@@ -155,7 +154,7 @@
 		width: 700upx;
 		height: 600upx;
 	}
-	
+
 	.form-prompt {
 		position: absolute;
 		bottom: 530upx;

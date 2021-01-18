@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<image class="background" lazy-load="true" src="../../static/phase1/background.png"></image>
+		<image class="background" src="https://i.loli.net/2021/01/18/Ot2viGckofmsL4X.png"></image>
 		<view class="header focus-in-expand-fwd">
 			<view class="header-year">2020</view>
 			<view class="header-season">Winter - Spring</view>
@@ -9,39 +9,39 @@
 			<view class="message-list__box scale-in-top" @click="openPopup(1)">
 				<view class="message-list__line">
 					<view class="message-list__type">
-						<image lazy-load="true" src="../../static/phase1/Outlook.png" class="message-list__icon"></image>
+						<image src="../../static/phase1/Outlook.png" class="message-list__icon"></image>
 						Outlook
 					</view>
 					<view class="message-list__time">2m ago</view>
 				</view>
 				<view class="message-list__content">推迟开学</view>
-				<image v-if="hint == 1" lazy-load="true" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
+				<image v-if="hint == 1" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 			<view class="message-list__box scale-in-top" style="animation-delay: .3s;" @click="openPopup(2)">
 				<view class="message-list__line">
 					<view class="message-list__type">
-						<image lazy-load="true" src="../../static/phase1/Flipgrid.png" class="message-list__icon"></image>
+						<image src="../../static/phase1/Flipgrid.png" class="message-list__icon"></image>
 						Flipgrid
 					</view>
 					<view class="message-list__time">4m ago</view>
 				</view>
 				<view class="message-list__content">网课作业通知</view>
-				<image v-if="hint == 2" lazy-load="true" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
+				<image v-if="hint == 2" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 			<view class="message-list__box scale-in-top" style="animation-delay: .5s;" @click="openPopup(3)">
 				<view class="message-list__line">
 					<view class="message-list__type">
-						<image lazy-load="true" src="../../static/phase1/wechat.png" class="message-list__icon"></image>
+						<image src="../../static/phase1/wechat.png" class="message-list__icon"></image>
 						WeChat
 					</view>
 					<view class="message-list__time">6m ago</view>
 				</view>
 				<view class="message-list__content">"捐"学费</view>
-				<image v-if="hint == 3" lazy-load="true" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
+				<image v-if="hint == 3" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 		</view>
 		<view class="footer">
-			<image v-if="hint == 0" lazy-load="true" src="../../static/phase1/arrow.png" class="heartbeat" style="width: 80upx; height: 80upx;"
+			<image v-if="hint == 0" src="../../static/phase1/arrow.png" class="heartbeat" style="width: 80upx; height: 80upx;"
 			 @click="navigateToNext"></image>
 		</view>
 		<!-- 弹窗 -->
@@ -51,13 +51,13 @@
 				<image class="email-image slide-in-blurred-top" style="top: 40upx; left: 40upx; animation-delay: .5s;" src="../../static/phase1/1.2.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 70upx; left: 70upx; animation-delay: 1s;" src="../../static/phase1/1.3.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1.5s;" src="../../static/phase1/1.4.png"></image>
-				<image class="email-image slide-in-blurred-bottom" style="top: 300upx; left: 50upx; animation-delay: 2s;" src="../../static/phase1/1.5.png"></image>
-				<image class="email-image fade-in" style="top: 300upx; left: 30upx; animation-delay: 2.5s;" src="../../static/phase1/watcher.png"></image>
+				<image class="email-image slide-in-blurred-bottom" style="top: 300upx; left: 50upx; animation-delay: 2s;" src="https://i.loli.net/2021/01/18/HiznDvsMhL79UoW.png"></image>
+				<image class="email-image fade-in" style="top: 300upx; left: 30upx; animation-delay: 2.5s;" src="https://i.loli.net/2021/01/18/WjYCH6PTOJ3g8qe.png"></image>
 			</view>
 		</uni-popup>
 		<uni-popup ref="popupDownload" type="center">
 			<view class="popup-box">
-				<image lazy-load="true" src="../../static/phase1/download.png" style="width: 250upx; height: 300upx; margin-bottom: 30upx;"></image>
+				<image src="../../static/phase1/download.png" style="width: 250upx; height: 300upx; margin-bottom: 30upx;"></image>
 				视频上传中
 				<progress v-if="progress" class="progress-bar" percent="80" activeColor="blue" active="true" stroke-width="8"
 				 show-info="true" border-radius="10" duration="60" @activeend="showPrompt" />
@@ -67,9 +67,9 @@
 		<uni-popup ref="popupFee" type="center">
 			<view class="email-container">
 				<image class="email-image slide-in-blurred-top" src="../../static/phase1/2.1.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 50upx; animation-delay: .5s;" src="../../static/phase1/2.2.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1s;" src="../../static/phase1/2.3.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 400upx; animation-delay: 1.5s;" src="../../static/phase1/2.4.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 50upx; animation-delay: .5s;" src="https://i.loli.net/2021/01/18/TpGiHfDrK1WFbtE.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1s;" src="https://i.loli.net/2021/01/18/iPap6GILOVYfXCh.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 400upx; animation-delay: 1.5s;" src="https://i.loli.net/2021/01/18/8uzl6CF5hgVxAvL.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 450upx; left: 50upx; animation-delay: 2s;" src="../../static/phase1/2.5.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 500upx; left: 100upx; animation-delay: 2.5s;" src="../../static/phase1/2.6.png"></image>
 			</view>
