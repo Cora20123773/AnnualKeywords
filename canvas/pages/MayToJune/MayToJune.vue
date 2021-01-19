@@ -3,11 +3,12 @@
 		<image class="background" src="https://i.loli.net/2021/01/18/8xMDkqaAwzh5ibZ.jpg"></image>
 		<view v-if="scene == 1" class="scene">
 			<image class="gate slide-in-top" src="https://i.loli.net/2021/01/18/wBL62QMY5bd4ypt.png" mode="aspectFit" @click="checkPic"></image>
-			<view v-if="picChecked" class="footer">
-				<view class="button" @click="transferScene">navigate</view>
-			</view>
-			<view v-else class="fade-in" style="animation-delay: 0.7s;">
-				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
+			<view class="footer">
+				<view class="button" @click="goBack">back</view>
+				<view v-if="picChecked" class="button" style="margin-left: 50upx;" @click="transferScene">navigate</view>
+				<view v-else class="fade-in" style="animation-delay: 0.7s;">
+					<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
+				</view>
 			</view>
 			<view v-if="picChecked" class="form">
 				<!-- 点击第一张SAMS表单出现SAMS2表单 -->
@@ -20,14 +21,15 @@
 		<view v-if="scene == 2" class="scene">
 			<image class="restuarant slide-in-top" src="https://i.loli.net/2021/01/18/IesKTtjAQdDkCaB.png" mode="aspectFit"
 			 @click="checkPic"></image>
-			<view v-if="picChecked" class="footer">
-				<view class="button" @click="transferScene">navigate</view>
-			</view>
-			<view v-else class="fade-in" style="animation-delay: 0.7s;">
-				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
+			<view class="footer">
+				<view class="button" @click="goBack">back</view>
+				<view v-if="picChecked" class="button" style="margin-left: 50upx;" @click="transferScene">navigate</view>
+				<view v-else class="fade-in" style="animation-delay: 0.7s;">
+					<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
+				</view>
 			</view>
 			<view v-if="picChecked" class="form">
-				<image class="form-element slide-in-blurred-top" src="../../static/phase2/food.png" mode="aspectFit"></image>
+				<image class="form-element slide-in-blurred-top" src="https://i.loli.net/2021/01/19/atVIiYeyHU5MoXP.png" mode="aspectFit"></image>
 			</view>
 		</view>
 		<view v-if="scene > 2" class="scene">
@@ -41,15 +43,16 @@
 			 mode="aspectFit" @click="checkDorm"></image>
 			<image v-if="clickNum >= 5" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/bR8v4ZVhyI2ewFz.png"
 			 mode="aspectFit" @click="checkDorm"></image>
-			<view v-if="picChecked && clickNum >= 5" class="footer">
-				<view class="button" @click="transferScene">navigate</view>
+			<view class="footer">
+				<view class="button" @click="goBack">back</view>
+				<view v-if="picChecked && clickNum >= 5" class="button" style="margin-left: 50upx;" @click="transferScene">navigate</view>
 			</view>
 			<view v-if="!picChecked" class="fade-in" style="animation-delay: 0.7s;">
 				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
 			</view>
 			<view v-else class="form" style="top: -100upx;">
 				<image class="form-element slide-in-blurred-top" src="../../static/phase2/dormitory.png" mode="aspectFit"></image>
-				<view class="form-prompt focus-in-expand-fwd" style="animation-delay: 0.5s;">试着点亮灯光吧!</view>
+				<view class="form-prompt focus-in-expand-fwd" style="animation-delay: 0.3s;">试着点亮灯光吧!</view>
 			</view>
 		</view>
 	</view>
@@ -89,6 +92,12 @@
 					this.picChecked = false
 					this.scene++
 				}
+			},
+
+			goBack() {
+				uni.redirectTo({
+					url: '/pages/JanToApril/JanToApril'
+				});
 			},
 		}
 	}

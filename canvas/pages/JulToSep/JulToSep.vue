@@ -1,10 +1,10 @@
 <template>
-	<view class="wrapper">
+	<view class="wrapper" :class="{ disableScroll: !hideLibrary }">
 		<image class="background" src="https://i.loli.net/2021/01/18/VL3tn6xXvh5Rrs9.gif"></image>
 		<view class="scene slideInRight" style="animation-delay: 5s;">
 			<view class="scene" :class="{ slideOutLeft: scene > 1 }">
 				<image class="scene-image" src="https://i.loli.net/2021/01/18/wDYRCUVNHOyg2Ib.png" mode="aspectFit"></image>
-				<image class="free-fall" style="animation-delay: 6s;" src="../../static/phase3/ball.PNG" mode="aspectFit"></image>
+				<image class="scene-ball free-fall" style="animation-delay: 6s;" src="../../static/phase3/ball.png" mode="aspectFit"></image>
 			</view>
 		</view>
 		<view class="scene" :class="{ slideInRight: scene == 2, hide: scene != 2 || hideLibrary }">
@@ -17,8 +17,9 @@
 			<image id="pyq" class="friend-circle" src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" mode="widthFix"></image>
 			<view style="width: 100vw; height: 50upx; background-color: #FFFFFF; margin-top: -30upx;"></view>
 		</view>
-		<view v-if="scene != 2" class="footer">
-			<view class="button" @click="transferScene">navigate</view>
+		<view class="footer">
+			<view class="button" @click="goBack">back</view>
+			<view v-if="scene != 2" class="button" style="margin-left: 50upx;" @click="transferScene">navigate</view>
 		</view>
 		<!-- 		<view v-if="circle" class="header slide-in-top" :style="{ height: top + height + 5 + 'px' }">
 			<view class="header-bar">Moments</view>
@@ -73,16 +74,24 @@
 					this.scene++
 				}
 			},
+			
+			goBack() {
+				uni.redirectTo({
+					url: '/pages/MayToJune/MayToJune'
+				});
+			},
 
 			scroll() {
 				this.hideLibrary = true
-				uni.pageScrollTo({
-					selector: '#pyq',
-					duration: 500,
-					complete: () => {
-						this.scene++
-					}
-				});
+				this.$nextTick(function(){
+					uni.pageScrollTo({
+						selector: '#pyq',
+						duration: 1000,
+						complete: () => {
+							this.scene++
+						}
+					});
+				})
 			},
 		}
 	}
@@ -117,6 +126,12 @@
 		z-index: 3; */
 		width: 100vw;
 		height: 80vh;
+	}
+	
+	.scene-ball {
+		position: fixed;
+		width: 50upx;
+		height: 50upx;
 	}
 
 	.gesture {

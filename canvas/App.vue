@@ -17,6 +17,12 @@
 	@import url("/common/css/magic.min.css");
 
 	/*每个页面公共css */
+	
+	.disableScroll {
+		overflow: hidden;
+		height: 100vh;
+		transition: 0.5s;
+	}
 
 	.background {
 		position: fixed;
@@ -40,6 +46,7 @@
 		display: flex;
 		justify-content: flex-end;
 		position: fixed;
+		width: 50vw;
 		z-index: 1;
 		bottom: 50upx;
 		right: 40upx;
@@ -64,17 +71,14 @@
 	@keyframes focus-in-expand-fwd {
 		0% {
 			letter-spacing: -0.5em;
-			-webkit-transform: translateZ(-800px);
 			transform: translateZ(-800px);
-			-webkit-filter: blur(12px);
 			filter: blur(12px);
 			opacity: 0;
 		}
 
 		100% {
-			-webkit-transform: translateZ(0);
+			letter-spacing: 5upx;
 			transform: translateZ(0);
-			-webkit-filter: blur(0);
 			filter: blur(0);
 			opacity: 1;
 		}
@@ -263,21 +267,21 @@
 
 	@keyframes free-fall {
 		0% {
-			position: fixed;
+/* 			position: fixed;
 			width: 50upx;
-			height: 50upx;
+			height: 50upx; */
 			top: 37vh;
 			right: 33vw;
-			filter: opacity(0);
+			opacity: 0;
 		}
 
 		100% {
-			position: fixed;
+/* 			position: fixed;
 			width: 50upx;
-			height: 50upx;
-			top: 57vh;
+			height: 50upx; */
+			top: 60vh;
 			right: 33vw;
-			filter: opacity(1);
+			opacity: 1;
 		}
 	}
 

@@ -70,8 +70,8 @@
 				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 50upx; animation-delay: .5s;" src="https://i.loli.net/2021/01/18/TpGiHfDrK1WFbtE.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1s;" src="https://i.loli.net/2021/01/18/iPap6GILOVYfXCh.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 400upx; animation-delay: 1.5s;" src="https://i.loli.net/2021/01/18/8uzl6CF5hgVxAvL.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 450upx; left: 50upx; animation-delay: 2s;" src="../../static/phase1/2.5.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 500upx; left: 100upx; animation-delay: 2.5s;" src="../../static/phase1/2.6.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 450upx; left: 50upx; animation-delay: 2s;" src="https://i.loli.net/2021/01/19/r29Ju8EtRwzgjG1.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 500upx; left: 100upx; animation-delay: 2.5s;" src="https://i.loli.net/2021/01/19/IQJHCY2GTtwpLVq.png"></image>
 			</view>
 		</uni-popup>
 	</view>
@@ -244,7 +244,7 @@
 	}
 
 	.progress-bar {
-		width: 60vw;
+		width: 62vw;
 		margin-top: 30upx;
 		margin-bottom: 30upx;
 	}
@@ -264,7 +264,7 @@
 	.email-container {
 		position: fixed;
 		left: 0;
-		top: 20vh;
+		top: 15vh;
 		width: 100vw;
 		height: auto;
 	}
