@@ -1,95 +1,71 @@
 <template>
-	<!-- <view class="box" style="height: 500px;" @click="changeLight">		
-		<image src="../../static/2/宿舍楼.png" class="dorm">
-		<view>
-			<image src="../../static/2/亮窗1.png" class="windows win1">
-			<image src="../../static/2/亮窗2.png" class="windows win2">
-			<image src="../../static/2/亮窗1.png" class="windows win3">
-			<image src="../../static/2/亮窗2.png" class="windows win4">
-			<image src="../../static/2/亮窗1.png" class="windows win5">
-			<image src="../../static/2/亮窗2.png" class="windows win6">
-			<image src="../../static/2/亮窗1.png" class="windows win7">
-			<image src="../../static/2/亮窗2.png" class="windows win8"></view>
-		
-	</canvas>
-	</view> -->
-	<view @click="start">
-		<custom name="slot-machine" result="" ref="trigger"></custom>
+	<view>
+		<view @click="start" v-if="index<=3">
+			<custom name="slot-machine" result="" ref="trigger"></custom>
+		</view>
+		<view @click="start" v-if="showJerry">
+			<custom name="slot-machine" result="" ref="trigger"></custom>
+		</view>
+		<transition class="showQ">
+			<view class="question" @click="goJerry" v-if="showWords" style="margin-top: 200px; text-align: center;">
+				在UNNC生存一天，需要多少钱？
+			</view>
+		</transition>
+		<view class="IDcard" v-if="index==7" @click="goToMachine">
+			<image src="../../static/4/Jerry学生卡.png"></image>
+		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		components: {
-		},
+		components: {},
 		data() {
 			return {
-				x: 0,
-				y: 0,
-				display:"true",
-				src:"../../static/2/亮窗.png",
+				index: 0, //点击次数
+				showWords: true,
+				showWords: false,
+				showJerry: false
 			}
-		},
-		mounted() {
-		
-		
 		},
 
 		methods: {
-			// changeLight(){
-				
-			// }
-			start(){
-				console.log("dfdf")
+			start() {
 				this.$refs.trigger.start()
+
+				this.index = this.index + 1;
+				if (this.index == 4) {
+					this.showMachine = !this.showMachine;
+					this.showWords = !this.showWords;
+
+				}
+				if (this.index == 5 || this.index == 6) {
+					this.showJerry = true
+				}
+				if (this.index == 7) {
+					this.showJerry = false
+				}
+
+			},
+			//出现问题后回到老虎机，摇出jerry学生卡
+			goJerry() {
+				this.index = 5,
+					this.showWords = false,
+					this.showJerry = true,
+					console.log(this.index)
+			},
+
+			goToMachine() {
+				uni.navigateTo({
+					url: '/pages/index/gift-machine'
+				});
 			}
 		}
-}
+	}
 </script>
 
-<style>
-	.dorm{
-		position: relative;
-		display: flex;
-		height: 400px;
-	}
-	.windows{
-		width: 50px;
-		height: 50px;
-		display: block;
-		position: absolute;
-	}
-	.win1{
-		margin-top: -200px;
-		margin-left: 70px;
-	}
-	
-	.win2{
-		margin-top: -235px;
-		margin-left: 90px;
-	}
-	.win3{
-		margin-top: -160px;
-		margin-left: 89px;
-	}
-	.win4{
-		margin-top: -220px;
-		margin-left: 126px;
-	}
-	.win5{
-		margin-top: -145px;
-		margin-left: 126px;
-	}
-	.win6{
-		margin-top: -200px;
-		margin-left: 185px;
-	}
-	.win7{
-		margin-top: -235px;
-		margin-left: 165px;
-	}
-	.win8{
-		margin-top: -160px;
-		margin-left: 165px;
+<style scoped>
+	.showQ-enter-active {
+		transition: all 1s ease;
 	}
 </style>

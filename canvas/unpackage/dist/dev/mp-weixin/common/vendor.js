@@ -8013,7 +8013,18 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 39:
+/***/ 4:
+/*!**************************************************************************!*\
+  !*** /Users/jiangyijing/AnnualKeywords/AnnualKeywords/canvas/pages.json ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 41:
 /*!***********************************************************************************!*\
   !*** /Users/jiangyijing/AnnualKeywords/AnnualKeywords/canvas/static/js/digits.js ***!
   \***********************************************************************************/
@@ -8157,14 +8168,71 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 
 /***/ }),
 
-/***/ 4:
-/*!**************************************************************************!*\
-  !*** /Users/jiangyijing/AnnualKeywords/AnnualKeywords/canvas/pages.json ***!
-  \**************************************************************************/
+/***/ 49:
+/*!*********************************************************************************************!*\
+  !*** /Users/jiangyijing/AnnualKeywords/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 50));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+// 定义 type 类型:弹出类型：top/bottom/center
+var config = {
+  // 顶部弹出
+  top: 'top',
+  // 底部弹出
+  bottom: 'bottom',
+  // 居中弹出
+  center: 'center',
+  // 消息提示
+  message: 'top',
+  // 对话框
+  dialog: 'center',
+  // 分享
+  share: 'bottom',
+  // 卡片
+  card: 'center' };var _default =
 
 
+{
+  data: function data() {
+    return {
+      config: config };
+
+  },
+  mixins: [_message.default] };exports.default = _default;
+
+/***/ }),
+
+/***/ 50:
+/*!***********************************************************************************************!*\
+  !*** /Users/jiangyijing/AnnualKeywords/AnnualKeywords/canvas/components/uni-popup/message.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  created: function created() {
+    if (this.type === 'message') {
+      // 不显示遮罩
+      this.maskShow = false;
+      // 获取子组件对象
+      this.childrenMsg = null;
+    }
+  },
+  methods: {
+    customOpen: function customOpen() {
+      if (this.childrenMsg) {
+        this.childrenMsg.open();
+      }
+    },
+    customClose: function customClose() {
+      if (this.childrenMsg) {
+        this.childrenMsg.close();
+      }
+    } } };exports.default = _default;
 
 /***/ })
 

@@ -12,28 +12,26 @@
   "appid": "wxceee7651a4bd8583",
   "projectname": "canvas",
   "condition": {
-    "plugin": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "gamePlugin": {
+      "current": -1,
       "list": []
     },
     "miniprogram": {
+      "current": 0,
       "list": [
         {
-          "name": "pages/index/gift-machine",
-          "pathName": "pages/index/gift-machine",
+          "name": "",
+          "path": "",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/index/animation",
-          "pathName": "pages/index/animation",
-          "query": "",
-          "scene": null
+          "id": 0
         }
       ]
     }
