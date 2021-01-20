@@ -17,31 +17,16 @@
 			<image id="pyq" class="friend-circle" src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" mode="widthFix"></image>
 			<view style="width: 100vw; height: 50upx; background-color: #FFFFFF; margin-top: -30upx;"></view>
 		</view>
-		<view class="footer">
-			<view class="button" @click="goBack">back</view>
-			<view v-if="scene != 2" class="button" style="margin-left: 50upx;" @click="transferScene">navigate</view>
+		<view v-if="scene == 1" class="footer fade-in" style="animation-delay: 8s;">
+			<image src="../../static/phase3/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
+			<image src="../../static/phase3/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
+			 @click="transferScene"></image>
 		</view>
-		<!-- 		<view v-if="circle" class="header slide-in-top" :style="{ height: top + height + 5 + 'px' }">
-			<view class="header-bar">Moments</view>
+		<view v-if="scene == 3" class="footer fade-in" style="animation-delay: 1s;">
+			<image src="../../static/phase3/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
+			<image src="../../static/phase3/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
+			 @click="transferScene"></image>
 		</view>
-		<view v-if="circle" class="article"></view>
-		<view class="footer">
-			<view class="button" @click="navigateToNext">navigate</view>
-		</view>
-		<view>
-			<swiper class="scene-swiper bounce-in-top" :disable-touch="circle">
-				<swiper-item>
-					<image class="" src="../../static/phase3/tower.PNG" lazy-load="true" mode="aspectFit"></image>
-					<view class="free-fall"></view>
-				</swiper-item>
-				<swiper-item>
-					<image class="library" :class="{ libraryAfter: circle }" src="../../static/phase3/library.PNG" lazy-load="true"
-					 mode="aspectFit" @click="showCircle"></image>
-				</swiper-item>
-			</swiper>
-			<view v-if="circle" class="placeholder"></view>
-			<view v-if="circle" class="swiper-mask"></view>
-		</view> -->
 	</view>
 </template>
 
@@ -74,16 +59,16 @@
 					this.scene++
 				}
 			},
-			
+
 			goBack() {
 				uni.redirectTo({
-					url: '/pages/MayToJune/MayToJune'
+					url: '/pages/JulToSep/JulToSep'
 				});
 			},
 
 			scroll() {
 				this.hideLibrary = true
-				this.$nextTick(function(){
+				this.$nextTick(function() {
 					uni.pageScrollTo({
 						selector: '#pyq',
 						duration: 1000,
@@ -127,7 +112,7 @@
 		width: 100vw;
 		height: 80vh;
 	}
-	
+
 	.scene-ball {
 		position: fixed;
 		width: 50upx;

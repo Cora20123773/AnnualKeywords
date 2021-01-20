@@ -40,8 +40,9 @@
 				<image v-if="hint == 3" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 		</view>
-		<view class="footer">
-			<image v-if="hint == 0" src="../../static/phase1/arrow.png" class="heartbeat" style="width: 80upx; height: 80upx;"
+		<view v-if="hint == 0" class="footer fade-in">
+			<image src="../../static/phase1/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
+			<image src="../../static/phase1/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
 			 @click="navigateToNext"></image>
 		</view>
 		<!-- 弹窗 -->
@@ -143,7 +144,13 @@
 				uni.navigateTo({
 					url: '/pages/MayToJune/MayToJune'
 				});
-			}
+			},
+			
+			goBack() {
+				uni.redirectTo({
+					url: '/pages/JanToApril/JanToApril'
+				});
+			},
 		}
 	}
 </script>
@@ -205,7 +212,7 @@
 		filter: opacity(0.5);
 		z-index: -1;
 	}
-	
+
 	.message-list__box:active {
 		width: 75vw;
 		height: 110upx;
