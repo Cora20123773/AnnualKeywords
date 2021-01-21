@@ -7936,9 +7936,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!*************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/pages.json ***!
-  \*************************************************************/
+/*!***********************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/pages.json ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7946,10 +7946,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 47:
-/*!*************************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/common/js/anime.min.js ***!
-  \*************************************************************************/
+/***/ 53:
+/*!***********************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/common/js/anime.min.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7964,10 +7964,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 64:
-/*!**********************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/common/js/digits.js ***!
-  \**********************************************************************/
+/***/ 70:
+/*!********************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/common/js/digits.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8108,15 +8108,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.digit = vo
 
 /***/ }),
 
-/***/ 72:
-/*!********************************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
-  \********************************************************************************/
+/***/ 78:
+/*!******************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/components/uni-popup/popup.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 73));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 79));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -8145,10 +8145,10 @@ var config = {
 
 /***/ }),
 
-/***/ 73:
-/*!**********************************************************************************!*\
-  !*** C:/Users/吕曙光/Desktop/AnnualKeywords/canvas/components/uni-popup/message.js ***!
-  \**********************************************************************************/
+/***/ 79:
+/*!********************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/AnnualKeywords/canvas/components/uni-popup/message.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

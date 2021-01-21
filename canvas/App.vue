@@ -17,7 +17,7 @@
 	@import url("/common/css/magic.min.css");
 
 	/*每个页面公共css */
-	
+
 	.disableScroll {
 		overflow: hidden;
 		height: 100vh;
@@ -54,6 +54,11 @@
 
 	.hide {
 		display: none;
+	}
+
+	/* 官方优化图片tips */
+	image {
+		will-change: transform
 	}
 
 	/* ----------------------------------------------
@@ -267,7 +272,7 @@
 
 	@keyframes free-fall {
 		0% {
-/* 			position: fixed;
+			/* 			position: fixed;
 			width: 50upx;
 			height: 50upx; */
 			top: 37vh;
@@ -276,7 +281,7 @@
 		}
 
 		100% {
-/* 			position: fixed;
+			/* 			position: fixed;
 			width: 50upx;
 			height: 50upx; */
 			top: 60vh;
