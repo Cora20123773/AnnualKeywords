@@ -27,8 +27,10 @@
 			<image src="https://i.loli.net/2021/01/18/wDYRCUVNHOyg2Ib.png" @load="loadImages"></image>
 			<image src="https://i.loli.net/2021/01/18/WZ7wRUTducJ4stC.png" @load="loadImages"></image>
 			<image src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" @load="loadImages"></image>
+			<!-- 4 -->
+			<image src="https://i.loli.net/2021/01/22/YxW53C6ck8javLf.jpg" @load="loadImages"></image>
 		</view>
-		<view v-if="loadedImg == 23" class="prompt fade-in">资源加载完毕</view>
+		<view v-if="loadedImg == imgNum" class="prompt fade-in">资源加载完毕</view>
 		<view v-else class="prompt">资源加载中请耐心等候...</view>
 		<view>
 			<!-- <view class="bar"></view> -->
@@ -48,6 +50,7 @@
 		data() {
 			return {
 				loadedImg: 0,
+				imgNum: 24,
 				// imgLoadList: [],
 				// imgInfo: [],
 				// callbacks: {},
@@ -64,14 +67,14 @@
 
 			loadImages(event) {
 				this.loadedImg++
-				if (this.loadedImg == 23) {
+				if (this.loadedImg == this.imgNum) {
 					setTimeout(() => {
 						uni.navigateTo({
 							url: '/pages/JanToApril/JanToApril'
 						});
-					}, 2000)
+					}, 1000)
 				}
-				console.log(event.detail.height)
+				// console.log(event.detail.height)
 				//同时发起全部图片的加载
 				// this.imgList.forEach(item => {
 				// 	this.load(item.url)

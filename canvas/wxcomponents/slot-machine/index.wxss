@@ -1,0 +1,84 @@
+/* 老虎机外壳 */
+.slot-machine-container {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 305px;
+	z-index: 1;
+	width: 770rpx;
+	height: 728rpx;
+	background: transparent url(https://i.loli.net/2021/01/20/S2Fo4IJQlTbrRya.png) bottom center no-repeat;
+	background-size: cover
+}
+
+.slot-machine-container .reel-container {
+	position: absolute;
+	left: 60rpx;
+	top: 500rpx;
+	width: 434rpx;
+	height: 282rpx;
+	overflow: hidden
+}
+/* 老虎机滚动条 */
+.slot-machine-container .reel-container .reel {
+	position: absolute;
+	padding-left: -400px;
+	width: 120rpx;
+	height: 2160rpx;
+	/* background-size: contain */
+}
+
+/* 不同的滚动条 */
+/* 左 */
+.slot-machine-container .reel-container .reel0 {
+	background: url(https://i.loli.net/2021/01/20/alIknZwUpo1SVy8.png) 0 0 repeat-y;
+	left: 150rpx
+}
+
+/* 中 */
+.slot-machine-container .reel-container .reel1 {
+	background: url(https://i.loli.net/2021/01/20/EFgr7LQk5tZqWAz.png) 0 0 repeat-y;
+	left: 240rpx
+}
+
+/* 右 */
+.slot-machine-container .reel-container .reel2 {
+	background: url(https://i.loli.net/2021/01/20/SY6FsL1HAQweMq3.png) 0 0 repeat-y;
+	left: 360rpx
+}
+
+/* .slot-machine-container .reel-container .reel-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+	background: transparent url(https://www.sunniejs.cn/static/weapp/reel_overlay.png) 0 0 repeat-y;
+	background-size: cover
+} */
+
+@keyframes bounce {
+
+	40%,
+	43% {
+		animation-timing-function: cubic-bezier(.645, .045, .355, 1);
+		transform: translate3d(0, -40rpx, 0)
+	}
+
+	70% {
+		animation-timing-function: cubic-bezier(.645, .045, .355, 1);
+		transform: translate3d(0, 20rpx, 0)
+	}
+
+	to {
+		animation-timing-function: cubic-bezier(.645, .045, .355, 1);
+		transform: translate3d(0, 0, 0)
+	}
+}
+
+.bounce {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-name: bounce;
+	transform-origin: center bottom
+}

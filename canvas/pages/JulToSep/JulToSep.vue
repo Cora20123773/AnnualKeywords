@@ -1,17 +1,20 @@
 <template>
 	<view class="wrapper" :class="{ disableScroll: !hideLibrary }">
 		<image class="background" src="https://i.loli.net/2021/01/18/VL3tn6xXvh5Rrs9.gif"></image>
+		<!-- 分数线 -->
 		<view class="scene slideInRight" style="animation-delay: 5s;">
 			<view class="scene" :class="{ slideOutLeft: scene > 1 }">
 				<image class="scene-image" src="https://i.loli.net/2021/01/18/wDYRCUVNHOyg2Ib.png" mode="aspectFit"></image>
 				<image class="scene-ball free-fall" style="animation-delay: 6s;" src="../../static/phase3/ball.png" mode="aspectFit"></image>
 			</view>
 		</view>
+		<!-- 新图书馆 -->
 		<view class="scene" :class="{ slideInRight: scene == 2, hide: scene != 2 || hideLibrary }">
 			<image class="scene-image" src="https://i.loli.net/2021/01/18/WZ7wRUTducJ4stC.png" mode="aspectFit" @click.once="scroll"></image>
 			<image class="gesture heartbeat" src="../../static/phase3/gesture.png"></image>
 		</view>
 		<view v-if="scene == 2" class="placeholder"></view>
+		<!-- 朋友圈 -->
 		<view v-if="scene >= 2">
 			<view style="width: 100vw; height: 20vh;"></view>
 			<image id="pyq" class="friend-circle" src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" mode="widthFix"></image>
@@ -46,6 +49,12 @@
 		onLoad() {
 			// this.top = uni.getMenuButtonBoundingClientRect().top
 			// this.height = uni.getMenuButtonBoundingClientRect().height
+		},
+		onBackPress(option) {
+			// 屏蔽安卓返回物理按键
+			if (option.from === 'backbutton') {
+				return true
+			}
 		},
 		methods: {
 

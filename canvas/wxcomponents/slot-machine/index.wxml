@@ -1,0 +1,11 @@
+<view class="slot-machine-container">
+	<view class="reel-container">
+		<view wx:for="{{reels}}" wx:key="index" class="reel reel{{index}} {{item.css}}" animation="{{item.animation}}"  style="top:{{item.top}}rpx;" >
+     </view>
+		<view class="reel-overlay" />
+	</view>
+</view>
+
+<!-- 引入组件 -->
+<!-- <import src="../../wxapp-img-loader-master/img-loader/img-loader.js">
+<template is="img-loader" data="{{ imgLoadList }}"></template> -->

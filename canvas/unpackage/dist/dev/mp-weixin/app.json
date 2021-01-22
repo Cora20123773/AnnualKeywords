@@ -1,9 +1,5 @@
 {
   "pages": [
-    "pages/imagePreloader/imagePreloader",
-    "pages/JanToApril/JanToApril",
-    "pages/MayToJune/MayToJune",
-    "pages/JulToSep/JulToSep",
     "pages/SepToDec/SepToDec",
     "pages/index/index",
     "pages/index/littlepeople",

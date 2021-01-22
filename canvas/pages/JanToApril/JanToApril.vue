@@ -6,6 +6,7 @@
 			<view class="header-season">Winter - Spring</view>
 		</view>
 		<view class="message-list">
+			<!-- 推迟开学 -->
 			<view class="message-list__box scale-in-top" @click="openPopup(1)">
 				<view class="message-list__line">
 					<view class="message-list__type">
@@ -17,6 +18,7 @@
 				<view class="message-list__content">推迟开学</view>
 				<image v-if="hint == 1" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
+			<!-- 网课 -->
 			<view class="message-list__box scale-in-top" style="animation-delay: .3s;" @click="openPopup(2)">
 				<view class="message-list__line">
 					<view class="message-list__type">
@@ -28,6 +30,7 @@
 				<view class="message-list__content">网课作业通知</view>
 				<image v-if="hint == 2" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
+			<!-- 学费 -->
 			<view class="message-list__box scale-in-top" style="animation-delay: .5s;" @click="openPopup(3)">
 				<view class="message-list__line">
 					<view class="message-list__type">
@@ -102,6 +105,12 @@
 		},
 		onReady() {
 
+		},
+		onBackPress(option) {
+			// 屏蔽安卓返回物理按键
+			if (option.from === 'backbutton') {
+				return true
+			}
 		},
 		methods: {
 

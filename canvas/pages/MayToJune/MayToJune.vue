@@ -1,6 +1,7 @@
 <template>
 	<view class="wrapper">
 		<image class="background" src="https://i.loli.net/2021/01/18/8xMDkqaAwzh5ibZ.jpg"></image>
+		<!-- 四号门 -->
 		<view v-if="scene == 1" class="scene">
 			<image class="gate slide-in-top" src="https://i.loli.net/2021/01/18/wBL62QMY5bd4ypt.png" mode="aspectFit" @click="checkPic"></image>
 			<view v-if="picChecked" class="footer fade-in" style="animation-delay: 2s;">
@@ -19,6 +20,7 @@
 				<image class="form-element fade-in" style="animation-delay: 1s;" src="../../static/phase2/sam3.png" mode="aspectFit"></image>
 			</view>
 		</view>
+		<!-- 东城 -->
 		<view v-if="scene == 2" class="scene">
 			<image class="restuarant slide-in-top" src="https://i.loli.net/2021/01/18/IesKTtjAQdDkCaB.png" mode="aspectFit"
 			 @click="checkPic"></image>
@@ -34,6 +36,7 @@
 				<image class="form-element slide-in-blurred-top" src="https://i.loli.net/2021/01/19/atVIiYeyHU5MoXP.png" mode="aspectFit"></image>
 			</view>
 		</view>
+		<!-- 宿舍楼 -->
 		<view v-if="scene > 2" class="scene">
 			<image v-if="clickNum <= 1" class="dormitory slide-in-top" :class="{ dormitoryBg: picChecked }" src="https://i.loli.net/2021/01/18/wpvx1fIZCQ9rP3j.png"
 			 mode="aspectFit" @click="checkDorm"></image>
@@ -73,6 +76,12 @@
 				scene: 1, // 1:四号门，2:东城，3:宿舍楼
 				picChecked: false, // 是否已查看截图
 				clickNum: 0, // 点击宿舍楼次数
+			}
+		},
+		onBackPress(option) {
+			// 屏蔽安卓返回物理按键
+			if (option.from === 'backbutton') {
+				return true
 			}
 		},
 		methods: {
