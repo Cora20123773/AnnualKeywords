@@ -22,13 +22,16 @@ Component({
 		result: {
 			type: Array,
 			value: []
+		},
+		alignmentOffset: {
+			type: Number,
+			value: 0
 		}
 	},
 	data: {
 		credits: 50,
 		curBet: 1,
-		stripHeight: 720,
-		alignmentOffset: 100,
+		stripHeight: 730,
 		reelSpeed1Delta: 100,
 		positioningTime: 200,
 		bounceHeight: 200,
@@ -36,18 +39,18 @@ Component({
 		secondReelStopTime: 575,
 		thirdReelStopTime: 568,
 		payoutStopTime: 1500,
-		numIconsPerReel: 6,
+		numIconsPerReel: 3,
 		timer: [],
 		reels: [{
-			top: -1345,
+			top: 0,
 			animation: "",
 			css: ""
 		}, {
-			top: -977,
+			top: 0,
 			animation: "",
 			css: ""
 		}, {
-			top: -1101,
+			top: 0,
 			animation: "",
 			css: ""
 		}]
