@@ -33,6 +33,49 @@
 				<view class="start-button-mask" @click="startTrigger(3)"></view>
 				<image class="light" src="../../static/phase4/light.png"></image>
 			</swiper-item>
+			<!-- box1 -->
+			<swiper-item>
+				<image v-if="!boxOneOpen" class="box" src="https://i.loli.net/2021/01/24/VphRyNlTPOrKokn.png" mode="aspectFit"
+				 @click="openBox(1)"></image>
+				<image v-if="boxOneOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/7LuD4lfzGrwE91X.png" mode="aspectFit"></image>
+				<image v-if="showGestureFour" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
+				<image v-if="boxOneOpen" class="balloon slide-in-blurred-bottom" style="animation-duration: 2s; animation-delay: .5s;"
+				 src="../../static/phase4/redBalloon.png" mode="aspectFit"></image>
+				<image v-if="boxOneOpen" class="text puff-in-center" style="animation-delay: 2s;" src="../../static/phase4/marriage.png"
+				 mode="aspectFit"></image>
+			</swiper-item>
+			<!-- box2 -->
+			<swiper-item>
+				<image v-if="!boxTwoOpen" class="box" src="https://i.loli.net/2021/01/24/EItDRlCe3msahwK.png" mode="aspectFit"
+				 @click="openBox(2)"></image>
+				<image v-if="boxTwoOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/BanXMKYyjADWxZV.png" mode="aspectFit"></image>
+				<image v-if="showGestureFive" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
+				<image v-if="boxTwoOpen" class="balloon slide-in-blurred-bottom" style="animation-duration: 2s; animation-delay: .5s;"
+				 src="../../static/phase4/greenBalloon.png" mode="aspectFit"></image>
+				<image v-if="boxTwoOpen" class="text puff-in-center" style="animation-delay: 2s;" src="../../static/phase4/offer.png"
+				 mode="aspectFit"></image>
+			</swiper-item>
+			<!-- box3 -->
+			<swiper-item>
+				<image v-if="!boxThreeOpen" class="box" src="https://i.loli.net/2021/01/24/VphRyNlTPOrKokn.png" mode="aspectFit"
+				 @click="openBox(3)"></image>
+				<image v-if="boxThreeOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/7LuD4lfzGrwE91X.png" mode="aspectFit"></image>
+				<image v-if="showGestureSix" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
+				<image v-if="boxThreeOpen" class="text puff-in-center" style="left: 55vw; animation-delay: 2s;" src="../../static/phase4/5-HT.png"
+				 mode="aspectFit"></image>
+				<image v-if="boxThreeOpen" class="cat fade-in-bottom" style="animation-delay: .5s;" src="https://i.loli.net/2021/01/24/lv8OV7jw4kqHmPJ.png"
+				 mode="aspectFit"></image>
+				<image v-if="boxThreeOpen" class="dog fade-in-bottom" style="animation-delay: 1s;" src="https://i.loli.net/2021/01/24/3TC5c1FreMkz4Id.png"
+				 mode="aspectFit"></image>
+				<image v-if="boxThreeOpen" class="bird fade-in-bottom" style="animation-delay: 1.5s;" src="https://i.loli.net/2021/01/24/QxfrMXzjpnLeqWm.png"
+				 mode="aspectFit"></image>
+			</swiper-item>
+			<!-- ending -->
+			<swiper-item class="ending">
+				<image src="../../static/phase4/life.png" mode="aspectFit"></image>
+				<image src="../../static/phase4/End.png" mode="aspectFit"></image>
+				<image src="../../static/phase4/restart.jpg" mode="aspectFit" @click="restart"></image>
+			</swiper-item>
 		</swiper>
 		<!-- 弹窗 -->
 		<uni-popup ref="popupCard" type="center">
@@ -57,6 +100,12 @@
 				showGestureTwo: true,
 				lightThree: false,
 				showGestureThree: true,
+				boxOneOpen: false,
+				showGestureFour: true,
+				boxTwoOpen: false,
+				showGestureFive: true,
+				boxThreeOpen: false,
+				showGestureSix: true,
 			}
 		},
 		onBackPress(option) {
@@ -86,6 +135,33 @@
 						this.$refs.popupCard.open()
 					}, 3000)
 				}
+			},
+
+			openBox(index) {
+				if (index == 1) {
+					this.boxOneOpen = true
+					this.showGestureFour = false
+				}
+				if (index == 2) {
+					this.boxTwoOpen = true
+					this.showGestureFive = false
+				}
+				if (index == 3) {
+					this.boxThreeOpen = true
+					this.showGestureSix = false
+				}
+			},
+			
+			goBack() {
+				uni.redirectTo({
+					url: '/pages/SepToDec/SepToDec'
+				});
+			},
+			
+			restart() {
+				uni.redirectTo({
+					url: '/pages/JanToApril/JanToApril'
+				});
 			}
 		}
 	}
@@ -112,7 +188,7 @@
 		position: fixed;
 		bottom: 0px;
 		width: 100vw;
-		height: 700px;
+		height: 100vh;
 	}
 
 	swiper-item {
@@ -169,5 +245,67 @@
 		height: 250upx;
 		bottom: 590upx;
 		left: 240upx;
+	}
+
+	.box {
+		position: absolute;
+		bottom: 100px;
+		width: 500px;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		z-index: 0;
+	}
+
+	.box-open {
+		position: absolute;
+		bottom: 90px;
+		width: 300px;
+		left: 55%;
+		transform: translate(-50%, 0%);
+		z-index: 0;
+	}
+
+	.balloon {
+		position: absolute;
+		bottom: 50vh;
+		width: 100px;
+		left: 10vw
+	}
+
+	.text {
+		position: absolute;
+		bottom: 50vh;
+		width: 350upx;
+		left: 40vw
+	}
+
+	.cat {
+		position: absolute;
+		bottom: 190px;
+		width: 200px;
+		left: 18vw;
+	}
+
+	.dog {
+		position: absolute;
+		bottom: 300px;
+		width: 170px;
+		left: 22vw;
+	}
+
+	.bird {
+		position: absolute;
+		bottom: 400px;
+		width: 170px;
+		left: 23vw;
+	}
+	
+	.ending {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
 	}
 </style>

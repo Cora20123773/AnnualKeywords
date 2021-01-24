@@ -30,6 +30,13 @@
 			<!-- 4 -->
 			<image src="https://i.loli.net/2021/01/22/YxW53C6ck8javLf.jpg" @load="loadImages"></image>
 			<image src="https://i.loli.net/2021/01/20/S2Fo4IJQlTbrRya.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/VphRyNlTPOrKokn.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/7LuD4lfzGrwE91X.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/EItDRlCe3msahwK.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/BanXMKYyjADWxZV.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/lv8OV7jw4kqHmPJ.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/3TC5c1FreMkz4Id.png" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/24/QxfrMXzjpnLeqWm.png" @load="loadImages"></image>
 		</view>
 		<view v-if="loadedImg == imgNum" class="prompt fade-in">资源加载完毕</view>
 		<view v-else class="prompt">资源加载中请耐心等候...</view>
@@ -53,7 +60,7 @@
 		data() {
 			return {
 				loadedImg: 0,
-				imgNum: 25,
+				imgNum: 32,
 				progress: 0, // 加载进度
 				// imgLoadList: [],
 				// imgInfo: [],
@@ -85,119 +92,6 @@
 				// 	this.load(item.url)
 				// })
 			},
-
-			//加载完成后的回调
-			imageOnLoad(err, data) {
-				console.log('图片加载完成', err, data.src)
-
-				this.imgList = this.imgList.map(item => {
-					if (item.url == data.src)
-						item.loaded = true
-					return item
-				})
-				// this.setData({
-				// 	imgList
-				// })
-			},
-
-			/**
-			 * 加载图片
-			 *
-			 * @param  {String}   src      图片地址
-			 */
-			load(src) {
-				if (!src) return;
-
-				let list = this.imgLoadList,
-					imgInfo = this.imgInfo[src]
-
-				//已经加载成功过的，直接回调
-				if (imgInfo) {
-					this._runCallback(null, {
-						src: src,
-						width: imgInfo.width,
-						height: imgInfo.height
-					})
-
-					//新的未在下载队列中的
-				} else if (list.indexOf(src) == -1) {
-					list.push(src)
-					this.imgLoadList = list
-					// this.page.setData({
-					// 	'imgLoadList': list
-					// })
-				}
-			},
-
-			_imgOnLoad(ev) {
-				let src = ev.currentTarget.dataset.src,
-					width = ev.detail.width,
-					height = ev.detail.height
-
-				//记录已下载图片的尺寸信息
-				this.imgInfo[src] = {
-					width,
-					height
-				}
-				this._removeFromLoadList(src)
-
-				this._runCallback(null, {
-					src,
-					width,
-					height
-				})
-			},
-
-			_imgOnLoadError(ev) {
-				let src = ev.currentTarget.dataset.src
-				this._removeFromLoadList(src)
-				this._runCallback('Loading failed', {
-					src
-				})
-			},
-
-			//将图片从下载队列中移除
-			_removeFromLoadList(src) {
-				let list = this.imgLoadList
-				list.splice(list.indexOf(src), 1)
-				this.imgLoadList = list
-				// this.page.setData({
-				// 	'imgLoadList': list
-				// })
-			},
-
-			//执行回调
-			_runCallback(err, data) {
-				// let callback = this.callbacks[data.src] || this.defaultCallback
-				// callback(err, data)
-				this.imageOnLoad(err, data)
-				// delete this.callbacks[data.src]
-			},
-
-			//生成一些测试数据
-			genImgListData() {
-				let images = [
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3586/215/2086933702/144606/c5885c8b/583e2f08N13aa7762.png',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3643/111/394078676/159202/a59f6b72/5809b3ccN41e5e01f.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3388/167/1949827805/115796/6ad813/583660fbNe5c34eae.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3163/281/5203602423/192427/db09be58/5865cb7eN808cc6f4.png',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3634/225/410542226/185677/c17f0ecf/5809b073N364fe77e.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3808/206/329427377/119593/a8cf7470/580df323Nb641ab96.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3805/133/325945617/116002/e90e0bdf/580df2b5Ncb04c5ac.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3046/316/3037048447/184004/706c779e/57eb584fN4f8b6502.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3580/212/1841964843/369414/e78739fb/58351586Ne20ac82a.jpg',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3274/70/4925773051/133266/fae6e84/585c9890Na19001c8.png',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3157/27/5204515328/123020/5f061d81/5865cbcaNfdf0557f.png',
-					'http://img10.360buyimg.com/img/s600x600_jfs/t3265/341/5152556931/143928/bdf279a4/5865cb96Nff26fc5d.png'
-				]
-				images = images.concat(images.slice(0, 4))
-				return images.map(item => {
-					return {
-						url: item,
-						loaded: false
-					}
-				})
-			}
 		}
 	}
 </script>

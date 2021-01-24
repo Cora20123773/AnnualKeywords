@@ -24,7 +24,7 @@
 		<view v-if="scene == 2" class="scene">
 			<image class="restuarant slide-in-top" src="https://i.loli.net/2021/01/18/IesKTtjAQdDkCaB.png" mode="aspectFit"
 			 @click="checkPic"></image>
-			<view v-if="picChecked" class="footer fade-in" style="animation-delay: 1s;">
+			<view v-if="picChecked" class="footer fade-in" style="animation-delay: .5s;">
 				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
 				<image src="../../static/phase2/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
 				 @click="transferScene"></image>
@@ -158,7 +158,7 @@
 
 	.gesture {
 		position: fixed;
-		right: 250upx;
+		right: 280upx;
 		bottom: 200upx;
 		width: 90upx;
 		height: 90upx;
