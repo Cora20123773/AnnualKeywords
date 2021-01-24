@@ -29,12 +29,15 @@
 			<image src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" @load="loadImages"></image>
 			<!-- 4 -->
 			<image src="https://i.loli.net/2021/01/22/YxW53C6ck8javLf.jpg" @load="loadImages"></image>
+			<image src="https://i.loli.net/2021/01/20/S2Fo4IJQlTbrRya.png" @load="loadImages"></image>
 		</view>
 		<view v-if="loadedImg == imgNum" class="prompt fade-in">资源加载完毕</view>
 		<view v-else class="prompt">资源加载中请耐心等候...</view>
 		<view>
 			<!-- <view class="bar"></view> -->
-			<view class="bar overflow"></view>
+			<view class="bar overflow">
+				<view class="pattern" :style="{ width: progress + 'vw' }"></view>
+			</view>
 		</view>
 		<!-- <view v-for="(img, index) in imgList" :key="index">
 			<image v-if="{{ img.loaded }}" src="{{ img.url }}" />
@@ -50,7 +53,8 @@
 		data() {
 			return {
 				loadedImg: 0,
-				imgNum: 24,
+				imgNum: 25,
+				progress: 0, // 加载进度
 				// imgLoadList: [],
 				// imgInfo: [],
 				// callbacks: {},
@@ -67,6 +71,7 @@
 
 			loadImages(event) {
 				this.loadedImg++
+				this.progress += 80 / this.imgNum
 				if (this.loadedImg == this.imgNum) {
 					setTimeout(() => {
 						uni.navigateTo({
@@ -214,6 +219,18 @@
 		font-weight: 1000;
 		letter-spacing: 5upx;
 	}
+	
+	.pattern {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		height: 85px;
+		background: repeating-linear-gradient(45deg, #f06a0e, #f06a0e 10px, transparent 11px, transparent 19px, #f06a0e 20px);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		animation: move 1s linear infinite;
+	}
 
 	.bar {
 		position: relative;
@@ -224,18 +241,18 @@
 		// border: 1px solid #000;
 		background: #ffba01;
 
-		&::before {
-			position: absolute;
-			content: "";
-			top: 0;
-			left: 0;
-			width: 80vw;
-			height: 85px;
-			background: repeating-linear-gradient(45deg, #f06a0e, #f06a0e 10px, transparent 11px, transparent 19px, #f06a0e 20px);
-			background-position: 0 0;
-			background-repeat: no-repeat;
-			animation: move 1s linear infinite;
-		}
+		// &::before {
+		// 	position: absolute;
+		// 	content: "";
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 50vw;
+		// 	height: 85px;
+		// 	background: repeating-linear-gradient(45deg, #f06a0e, #f06a0e 10px, transparent 11px, transparent 19px, #f06a0e 20px);
+		// 	background-position: 0 0;
+		// 	background-repeat: no-repeat;
+		// 	animation: move 1s linear infinite;
+		// }
 
 	}
 

@@ -1,11 +1,11 @@
 <template>
 	<view class="wrapper">
 		<image class="background" src="https://i.loli.net/2021/01/22/YxW53C6ck8javLf.jpg"></image>
-		<image class="transfer" src="../../static/phase4/transfer.png" mode="aspectFill"></image>
+		<image class="transfer" src="../../static/phase4/transfer.jpg" mode="aspectFill"></image>
 		<swiper class="slide-in-right">
 			<!-- 新开张 -->
 			<swiper-item>
-				<slot-machine class="slot-machine" ref="trigger1" :result="end" alignmentOffset="150"></slot-machine>
+				<slot-machine class="slot-machine" ref="trigger1" :result="end" alignmentOffset="155"></slot-machine>
 				<image class="title" src="../../static/phase4/title1.png"></image>
 				<image v-if="showGestureOne" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightOne" class="start-button" src="../../static/phase4/startOff.png"></image>
@@ -15,7 +15,7 @@
 			</swiper-item>
 			<!-- 在UNNC生存一天需要多少钱 -->
 			<swiper-item>
-				<slot-machine class="slot-machine" ref="trigger2" :result="end" alignmentOffset="30"></slot-machine>
+				<slot-machine class="slot-machine" ref="trigger2" :result="end" alignmentOffset="35"></slot-machine>
 				<image class="title" src="../../static/phase4/title2.png"></image>
 				<image v-if="showGestureTwo" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightTwo" class="start-button" src="../../static/phase4/startOff.png"></image>
@@ -25,7 +25,7 @@
 			</swiper-item>
 			<!-- Jerry卷 -->
 			<swiper-item>
-				<slot-machine class="slot-machine" ref="trigger3" :result="end" alignmentOffset="250"></slot-machine>
+				<slot-machine class="slot-machine" ref="trigger3" :result="end" alignmentOffset="255"></slot-machine>
 				<image class="title" src="../../static/phase4/title3.png"></image>
 				<image v-if="showGestureThree" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightThree" class="start-button" src="../../static/phase4/startOff.png"></image>
@@ -65,8 +65,7 @@
 				return true
 			}
 		},
-		onLoad() {
-		},
+		onLoad() {},
 		methods: {
 			startTrigger(index) {
 				if (index == 1) {
@@ -104,27 +103,31 @@
 
 	.transfer {
 		position: fixed;
-		bottom: 1vh;
+		bottom: 15px;
 		width: 800upx;
-		height: 200upx;
-	}
-
-	.slot-machine {
-		position: fixed;
-		bottom: 1140upx;
-		width: 70vw;
-		height: 200upx;
+		height: 100px;
 	}
 
 	swiper {
+		position: fixed;
+		bottom: 0px;
 		width: 100vw;
-		height: 100vh;
+		height: 700px;
 	}
 
 	swiper-item {
 		position: relative;
-		width: 70vw;
-		height: 100vh;
+		/* bottom: 0px; */
+		/* width: 70vw; */
+	}
+
+	.slot-machine {
+		position: absolute;
+		bottom: 20px;
+		z-index: 0;
+		/* 		bottom: 30px;
+			width: 70vw;
+			height: 650px; */
 	}
 
 	/* 老虎机顶部文字 */
@@ -132,14 +135,14 @@
 		position: absolute;
 		width: 260upx;
 		height: 250upx;
-		bottom: 970upx;
+		bottom: 1010upx;
 		left: 260upx;
 	}
 
 	.gesture {
 		position: absolute;
 		left: 450upx;
-		bottom: 820upx;
+		bottom: 850upx;
 		width: 100upx;
 		height: 100upx;
 	}
@@ -148,7 +151,7 @@
 		position: absolute;
 		width: 300upx;
 		height: 300upx;
-		bottom: 750upx;
+		bottom: 790upx;
 		left: 235upx;
 	}
 
@@ -156,7 +159,7 @@
 		position: absolute;
 		width: 300upx;
 		height: 80upx;
-		bottom: 870upx;
+		bottom: 910upx;
 		left: 235upx;
 	}
 
@@ -164,7 +167,7 @@
 		position: absolute;
 		width: 300upx;
 		height: 250upx;
-		bottom: 555upx;
+		bottom: 590upx;
 		left: 240upx;
 	}
 </style>
