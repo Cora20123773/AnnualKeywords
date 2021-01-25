@@ -5,7 +5,7 @@
 		<swiper class="slide-in-right">
 			<!-- 新开张 -->
 			<swiper-item>
-				<slot-machine class="slot-machine" ref="trigger1" :result="end" alignmentOffset="155"></slot-machine>
+				<slot-machine class="slot-machine" ref="trigger1" :result="end" alignmentOffset="154"></slot-machine>
 				<image class="title" src="../../static/phase4/title1.png"></image>
 				<image v-if="showGestureOne" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightOne" class="start-button" src="../../static/phase4/startOff.png"></image>

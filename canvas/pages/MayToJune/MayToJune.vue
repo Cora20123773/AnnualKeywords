@@ -4,7 +4,7 @@
 		<!-- 四号门 -->
 		<view v-if="scene == 1" class="scene">
 			<image class="gate slide-in-top" src="https://i.loli.net/2021/01/18/wBL62QMY5bd4ypt.png" mode="aspectFit" @tap="checkPic"></image>
-			<view v-if="picChecked" class="footer fade-in" style="animation-delay: 2s;">
+			<view v-if="picChecked" class="footer fade-in" style="animation-delay: 1.5s;">
 				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
 				<image src="../../static/phase2/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
 				 @tap="transferScene"></image>
