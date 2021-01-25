@@ -10,7 +10,7 @@
 				<image v-if="showGestureOne" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightOne" class="start-button" src="../../static/phase4/startOff.png"></image>
 				<image v-if="lightOne" class="start-button fade-in" src="../../static/phase4/startOn.png"></image>
-				<view class="start-button-mask" @click="startTrigger(1)"></view>
+				<view class="start-button-mask" @tap="startTrigger(1)"></view>
 				<image class="light" src="../../static/phase4/light.png"></image>
 			</swiper-item>
 			<!-- 在UNNC生存一天需要多少钱 -->
@@ -20,7 +20,7 @@
 				<image v-if="showGestureTwo" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightTwo" class="start-button" src="../../static/phase4/startOff.png"></image>
 				<image v-if="lightTwo" class="start-button fade-in" src="../../static/phase4/startOn.png"></image>
-				<view class="start-button-mask" @click="startTrigger(2)"></view>
+				<view class="start-button-mask" @tap="startTrigger(2)"></view>
 				<image class="light" src="../../static/phase4/light.png"></image>
 			</swiper-item>
 			<!-- Jerry卷 -->
@@ -30,13 +30,13 @@
 				<image v-if="showGestureThree" src="../../static/phase4/gesture.png" class="gesture heartbeat"></image>
 				<image v-if="!lightThree" class="start-button" src="../../static/phase4/startOff.png"></image>
 				<image v-if="lightThree" class="start-button fade-in" src="../../static/phase4/startOn.png"></image>
-				<view class="start-button-mask" @click="startTrigger(3)"></view>
+				<view class="start-button-mask" @tap="startTrigger(3)"></view>
 				<image class="light" src="../../static/phase4/light.png"></image>
 			</swiper-item>
 			<!-- box1 -->
 			<swiper-item>
 				<image v-if="!boxOneOpen" class="box" src="https://i.loli.net/2021/01/24/VphRyNlTPOrKokn.png" mode="aspectFit"
-				 @click="openBox(1)"></image>
+				 @tap="openBox(1)"></image>
 				<image v-if="boxOneOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/7LuD4lfzGrwE91X.png" mode="aspectFit"></image>
 				<image v-if="showGestureFour" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
 				<image v-if="boxOneOpen" class="balloon slide-in-blurred-bottom" style="animation-duration: 2s; animation-delay: .5s;"
@@ -47,7 +47,7 @@
 			<!-- box2 -->
 			<swiper-item>
 				<image v-if="!boxTwoOpen" class="box" src="https://i.loli.net/2021/01/24/EItDRlCe3msahwK.png" mode="aspectFit"
-				 @click="openBox(2)"></image>
+				 @tap="openBox(2)"></image>
 				<image v-if="boxTwoOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/BanXMKYyjADWxZV.png" mode="aspectFit"></image>
 				<image v-if="showGestureFive" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
 				<image v-if="boxTwoOpen" class="balloon slide-in-blurred-bottom" style="animation-duration: 2s; animation-delay: .5s;"
@@ -58,7 +58,7 @@
 			<!-- box3 -->
 			<swiper-item>
 				<image v-if="!boxThreeOpen" class="box" src="https://i.loli.net/2021/01/24/VphRyNlTPOrKokn.png" mode="aspectFit"
-				 @click="openBox(3)"></image>
+				 @tap="openBox(3)"></image>
 				<image v-if="boxThreeOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/7LuD4lfzGrwE91X.png" mode="aspectFit"></image>
 				<image v-if="showGestureSix" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
 				<image v-if="boxThreeOpen" class="text puff-in-center" style="left: 55vw; animation-delay: 2s;" src="../../static/phase4/5-HT.png"
@@ -72,9 +72,9 @@
 			</swiper-item>
 			<!-- ending -->
 			<swiper-item class="ending">
-				<image src="../../static/phase4/life.png" mode="aspectFit"></image>
-				<image src="../../static/phase4/End.png" mode="aspectFit"></image>
-				<image src="../../static/phase4/restart.jpg" mode="aspectFit" @click="restart"></image>
+				<image style="width: 500upx;" src="../../static/phase4/life.png" mode="aspectFit"></image>
+				<image style="width: 400upx; margin-top: -130upx;" src="../../static/phase4/End.png" mode="aspectFit"></image>
+				<image class="restart" src="../../static/phase4/restart.png" mode="aspectFit" @tap="restart"></image>
 			</swiper-item>
 		</swiper>
 		<!-- 弹窗 -->
@@ -303,9 +303,16 @@
 	.ending {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		/* justify-content: center; */
 		align-items: center;
 		width: 100vw;
 		height: 100vh;
+		padding-top: 20vh;
+	}
+	
+	.restart {
+		margin-top: -50upx;
+		width: 100upx;
+		height: 100upx;
 	}
 </style>

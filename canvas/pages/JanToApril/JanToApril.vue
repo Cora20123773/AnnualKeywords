@@ -7,7 +7,7 @@
 		</view>
 		<view class="message-list">
 			<!-- 推迟开学 -->
-			<view class="message-list__box scale-in-top" @click="openPopup(1)">
+			<view class="message-list__box scale-in-top" @tap="openPopup(1)">
 				<view class="message-list__line">
 					<view class="message-list__type">
 						<image src="../../static/phase1/Outlook.png" class="message-list__icon"></image>
@@ -19,7 +19,7 @@
 				<image v-if="hint == 1" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 			<!-- 网课 -->
-			<view class="message-list__box scale-in-top" style="animation-delay: .3s;" @click="openPopup(2)">
+			<view class="message-list__box scale-in-top" style="animation-delay: .3s;" @tap="openPopup(2)">
 				<view class="message-list__line">
 					<view class="message-list__type">
 						<image src="../../static/phase1/Flipgrid.png" class="message-list__icon"></image>
@@ -31,7 +31,7 @@
 				<image v-if="hint == 2" src="../../static/phase1/gesture.png" class="message-list__gesture heartbeat"></image>
 			</view>
 			<!-- 学费 -->
-			<view class="message-list__box scale-in-top" style="animation-delay: .5s;" @click="openPopup(3)">
+			<view class="message-list__box scale-in-top" style="animation-delay: .5s;" @tap="openPopup(3)">
 				<view class="message-list__line">
 					<view class="message-list__type">
 						<image src="../../static/phase1/wechat.png" class="message-list__icon"></image>
@@ -44,9 +44,9 @@
 			</view>
 		</view>
 		<view v-if="hint == 0" class="footer fade-in">
-			<image src="../../static/phase1/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
+			<image src="../../static/phase1/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
 			<image src="../../static/phase1/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
-			 @click="navigateToNext"></image>
+			 @tap="navigateToNext"></image>
 		</view>
 		<!-- 弹窗 -->
 		<uni-popup ref="popupEmail" type="center">
@@ -65,7 +65,7 @@
 				视频上传中
 				<progress v-if="progress" class="progress-bar" percent="80" activeColor="blue" active="true" stroke-width="8"
 				 show-info="true" border-radius="10" duration="60" @activeend="showPrompt" />
-				<view v-if="downloadPrompt" class="text-input">距下载完成还需1000分钟…</view>
+				<view v-if="downloadPrompt" class="text-input">距上传完成还需1000分钟…</view>
 			</view>
 		</uni-popup>
 		<uni-popup ref="popupFee" type="center">

@@ -49,7 +49,7 @@
 		<!-- <view v-for="(img, index) in imgList" :key="index">
 			<image v-if="{{ img.loaded }}" src="{{ img.url }}" />
 		</view>
-		<button @click="loadImages">Click To Load Images</button> -->
+		<button @tap="loadImages">Click To Load Images</button> -->
 		<!-- 		<image v-for="{{ imgLoadList }}" :key="*this" src="{{ item }}" data-src="{{ item }}" bindload="_imgOnLoad" binderror="_imgOnLoadError"
 		 style="width:0;height:0;opacity:0" /> -->
 	</view>

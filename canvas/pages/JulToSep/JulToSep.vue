@@ -10,7 +10,7 @@
 		</view>
 		<!-- 新图书馆 -->
 		<view class="scene" :class="{ slideInRight: scene == 2, hide: scene != 2 || hideLibrary }">
-			<image class="scene-image" src="https://i.loli.net/2021/01/18/WZ7wRUTducJ4stC.png" mode="aspectFit" @click.once="scroll"></image>
+			<image class="scene-image" src="https://i.loli.net/2021/01/18/WZ7wRUTducJ4stC.png" mode="aspectFit" @tap.once="scroll"></image>
 			<image class="gesture heartbeat" src="../../static/phase3/gesture.png"></image>
 		</view>
 		<view v-if="scene == 2" class="placeholder"></view>
@@ -21,14 +21,14 @@
 			<view style="width: 100vw; height: 50upx; background-color: #FFFFFF; margin-top: -30upx;"></view>
 		</view>
 		<view v-if="scene == 1" class="footer fade-in" style="animation-delay: 8s;">
-			<image src="../../static/phase3/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
+			<image src="../../static/phase3/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
 			<image src="../../static/phase3/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
-			 @click="transferScene"></image>
+			 @tap="transferScene"></image>
 		</view>
 		<view v-if="scene == 3" class="footer fade-in" style="animation-delay: 1s;">
-			<image src="../../static/phase3/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
+			<image src="../../static/phase3/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
 			<image src="../../static/phase3/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
-			 @click="transferScene"></image>
+			 @tap="transferScene"></image>
 		</view>
 	</view>
 </template>
