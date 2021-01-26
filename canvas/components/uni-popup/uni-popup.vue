@@ -59,7 +59,7 @@
 					'top': 0,
 					'left': 0,
 					'right': 0,
-					'backgroundColor': 'rgba(0, 0, 0, 0.85)'
+					'backgroundColor': 'rgba(22, 22, 22, 0.8)'
 				}
 			}
 		},

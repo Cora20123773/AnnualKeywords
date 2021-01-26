@@ -16,8 +16,8 @@
 		<view v-if="scene == 2" class="placeholder"></view>
 		<!-- 朋友圈 -->
 		<view v-if="scene >= 2">
-			<view style="width: 100vw; height: 20vh;"></view>
-			<image id="pyq" class="friend-circle" src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" mode="widthFix"></image>
+			<view id="pyq" style="width: 100vw; height: 20vh;"></view>
+			<image class="friend-circle" src="https://i.loli.net/2021/01/18/lqLdMPX5YI4W9VS.png" mode="widthFix"></image>
 			<view style="width: 100vw; height: 50upx; background-color: #FFFFFF; margin-top: -30upx;"></view>
 		</view>
 		<view v-if="scene == 1" class="footer fade-in" style="animation-delay: 8s;">

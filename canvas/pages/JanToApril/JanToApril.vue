@@ -52,18 +52,18 @@
 		<uni-popup ref="popupEmail" type="center">
 			<view class="email-container">
 				<image class="email-image slide-in-blurred-top" src="../../static/phase1/1.1.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 40upx; left: 40upx; animation-delay: .5s;" src="../../static/phase1/1.2.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 70upx; left: 70upx; animation-delay: 1s;" src="../../static/phase1/1.3.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1.5s;" src="../../static/phase1/1.4.png"></image>
-				<image class="email-image slide-in-blurred-bottom" style="top: 300upx; left: 50upx; animation-delay: 2s;" src="https://i.loli.net/2021/01/18/HiznDvsMhL79UoW.png"></image>
-				<image class="email-image fade-in" style="top: 300upx; left: 30upx; animation-delay: 2.5s;" src="https://i.loli.net/2021/01/18/WjYCH6PTOJ3g8qe.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 50upx; animation-delay: .5s;" src="../../static/phase1/1.2.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 90upx; left: 80upx; animation-delay: 1s;" src="../../static/phase1/1.3.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 130upx; left: 110upx; animation-delay: 1.5s;" src="../../static/phase1/1.4.png"></image>
+				<image class="email-image slide-in-blurred-bottom" style="top: 400upx; left: 60upx; animation-delay: 2s;" src="https://i.loli.net/2021/01/18/HiznDvsMhL79UoW.png"></image>
+				<image class="email-image fade-in" style="top: 400upx; left: 40upx; animation-delay: 2.5s;" src="https://i.loli.net/2021/01/18/WjYCH6PTOJ3g8qe.png"></image>
 			</view>
 		</uni-popup>
 		<uni-popup ref="popupDownload" type="center">
 			<view class="popup-box">
 				<image src="../../static/phase1/download.png" style="width: 250upx; height: 300upx; margin-bottom: 30upx;"></image>
 				视频上传中
-				<progress v-if="progress" class="progress-bar" percent="80" activeColor="blue" active="true" stroke-width="8"
+				<progress v-if="progress" class="progress-bar" percent="80" activeColor="#ff462b" backgroundColor="#fec4cc" active="true" stroke-width="8"
 				 show-info="true" border-radius="10" duration="60" @activeend="showPrompt" />
 				<view v-if="downloadPrompt" class="text-input">距上传完成还需1000分钟…</view>
 			</view>
@@ -71,10 +71,10 @@
 		<uni-popup ref="popupFee" type="center">
 			<view class="email-container">
 				<image class="email-image slide-in-blurred-top" src="../../static/phase1/2.1.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 50upx; animation-delay: .5s;" src="https://i.loli.net/2021/01/18/TpGiHfDrK1WFbtE.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 50upx; left: 60upx; animation-delay: .5s;" src="https://i.loli.net/2021/01/18/TpGiHfDrK1WFbtE.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 100upx; left: 100upx; animation-delay: 1s;" src="https://i.loli.net/2021/01/18/iPap6GILOVYfXCh.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 400upx; animation-delay: 1.5s;" src="https://i.loli.net/2021/01/18/8uzl6CF5hgVxAvL.png"></image>
-				<image class="email-image slide-in-blurred-top" style="top: 450upx; left: 50upx; animation-delay: 2s;" src="https://i.loli.net/2021/01/19/r29Ju8EtRwzgjG1.png"></image>
+				<image class="email-image slide-in-blurred-top" style="top: 450upx; left: 60upx; animation-delay: 2s;" src="https://i.loli.net/2021/01/19/r29Ju8EtRwzgjG1.png"></image>
 				<image class="email-image slide-in-blurred-top" style="top: 500upx; left: 100upx; animation-delay: 2.5s;" src="https://i.loli.net/2021/01/19/IQJHCY2GTtwpLVq.png"></image>
 			</view>
 		</uni-popup>
@@ -280,14 +280,14 @@
 	.email-container {
 		position: fixed;
 		left: 0;
-		top: 15vh;
+		top: 13vh;
 		width: 100vw;
 		height: auto;
 	}
 
 	.email-image {
 		position: absolute;
-		left: 10upx;
+		left: 3vw;
 		top: 10upx;
 	}
 </style>

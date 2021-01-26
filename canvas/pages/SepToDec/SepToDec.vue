@@ -2,7 +2,7 @@
 	<view class="wrapper">
 		<image class="background" src="https://i.loli.net/2021/01/22/YxW53C6ck8javLf.jpg"></image>
 		<image class="transfer" src="../../static/phase4/transfer.jpg" mode="aspectFill"></image>
-		<swiper class="slide-in-right">
+		<swiper class="slide-in-right" indicator-dots="true" indicator-active-color="#515151">
 			<!-- 新开张 -->
 			<swiper-item>
 				<slot-machine class="slot-machine" ref="trigger1" :result="end" alignmentOffset="154"></slot-machine>
@@ -61,7 +61,7 @@
 				 @tap="openBox(3)"></image>
 				<image v-if="boxThreeOpen" class="box-open fade-in" src="https://i.loli.net/2021/01/24/7LuD4lfzGrwE91X.png" mode="aspectFit"></image>
 				<image v-if="showGestureSix" src="../../static/phase4/gesture.png" class="gesture heartbeat" style="bottom: 350upx;"></image>
-				<image v-if="boxThreeOpen" class="text puff-in-center" style="left: 55vw; animation-delay: 2s;" src="../../static/phase4/5-HT.png"
+				<image v-if="boxThreeOpen" class="text puff-in-center" style="width: 300upx; left: 60vw; animation-delay: 2s;" src="../../static/phase4/5-HT.png"
 				 mode="aspectFit"></image>
 				<image v-if="boxThreeOpen" class="cat fade-in-bottom" style="animation-delay: .5s;" src="https://i.loli.net/2021/01/24/lv8OV7jw4kqHmPJ.png"
 				 mode="aspectFit"></image>
@@ -72,8 +72,8 @@
 			</swiper-item>
 			<!-- ending -->
 			<swiper-item class="ending">
-				<image style="width: 500upx;" src="../../static/phase4/life.png" mode="aspectFit"></image>
-				<image style="width: 400upx; margin-top: -130upx;" src="../../static/phase4/End.png" mode="aspectFit"></image>
+				<image style="margin-top: 200upx; width: 400upx;" src="../../static/phase4/life.png" mode="aspectFit"></image>
+				<image style="width: 400upx; margin-top: -140upx;" src="../../static/phase4/End.png" mode="aspectFit"></image>
 				<image class="restart" src="../../static/phase4/restart.png" mode="aspectFit" @tap="restart"></image>
 			</swiper-item>
 		</swiper>
@@ -186,13 +186,14 @@
 
 	swiper {
 		position: fixed;
-		bottom: 0px;
+		bottom: 30px;
 		width: 100vw;
 		height: 100vh;
 	}
 
 	swiper-item {
 		position: relative;
+		bottom: -30px;
 		/* bottom: 0px; */
 		/* width: 70vw; */
 	}
@@ -228,7 +229,7 @@
 		width: 300upx;
 		height: 300upx;
 		bottom: 790upx;
-		left: 235upx;
+		left: 239upx;
 	}
 
 	.start-button-mask {
@@ -307,7 +308,7 @@
 		align-items: center;
 		width: 100vw;
 		height: 100vh;
-		padding-top: 20vh;
+		padding-top: 50vh;
 	}
 	
 	.restart {

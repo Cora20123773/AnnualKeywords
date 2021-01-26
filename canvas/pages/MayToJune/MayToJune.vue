@@ -3,11 +3,11 @@
 		<image class="background" src="https://i.loli.net/2021/01/18/8xMDkqaAwzh5ibZ.jpg"></image>
 		<!-- 四号门 -->
 		<view v-if="scene == 1" class="scene">
-			<image class="gate slide-in-top" src="https://i.loli.net/2021/01/18/wBL62QMY5bd4ypt.png" mode="aspectFit" @tap="checkPic"></image>
-			<view v-if="picChecked" class="footer fade-in" style="animation-delay: 1.5s;">
-				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
+			<image class="gate slide-in-top" src="https://i.loli.net/2021/01/18/wBL62QMY5bd4ypt.png" mode="aspectFit" @click="checkPic"></image>
+			<view v-if="picChecked" class="footer fade-in" style="animation-delay: 2s;">
+				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
 				<image src="../../static/phase2/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
-				 @tap="transferScene"></image>
+				 @click="transferScene"></image>
 			</view>
 			<view v-else class="fade-in" style="animation-delay: 0.7s;">
 				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
@@ -23,11 +23,11 @@
 		<!-- 东城 -->
 		<view v-if="scene == 2" class="scene">
 			<image class="restuarant slide-in-top" src="https://i.loli.net/2021/01/18/IesKTtjAQdDkCaB.png" mode="aspectFit"
-			 @tap="checkPic"></image>
+			 @click="checkPic"></image>
 			<view v-if="picChecked" class="footer fade-in" style="animation-delay: .5s;">
-				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
+				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
 				<image src="../../static/phase2/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
-				 @tap="transferScene"></image>
+				 @click="transferScene"></image>
 			</view>
 			<view v-else class="fade-in" style="animation-delay: 0.7s;">
 				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
@@ -38,20 +38,20 @@
 		</view>
 		<!-- 宿舍楼 -->
 		<view v-if="scene > 2" class="scene">
-			<image v-if="clickNum <= 1" class="dormitory slide-in-top" :class="{ dormitoryBg: picChecked }" src="https://i.loli.net/2021/01/18/wpvx1fIZCQ9rP3j.png"
-			 mode="aspectFit" @tap="checkDorm"></image>
-			<image v-if="clickNum == 2" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/DQBKjOXLMS3bcNA.png"
-			 mode="aspectFit" @tap="checkDorm"></image>
-			<image v-if="clickNum == 3" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/pnZBQ1qoD5MYF87.png"
-			 mode="aspectFit" @tap="checkDorm"></image>
-			<image v-if="clickNum == 4" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/wizVWItSTM4xuf1.png"
-			 mode="aspectFit" @tap="checkDorm"></image>
-			<image v-if="clickNum >= 5" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/18/bR8v4ZVhyI2ewFz.png"
-			 mode="aspectFit" @tap="checkDorm"></image>
-			<view v-if="picChecked && clickNum >= 5"  class="footer fade-in">
-				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @tap="goBack"></image>
+			<image class="dormitory slide-in-top" :class="{ dormitoryDark: picChecked }" src="https://i.loli.net/2021/01/18/wpvx1fIZCQ9rP3j.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum >= 2" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/25/dxqG4iJzb8o5DIU.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum >= 3" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/25/i1DmW57YTAgLfPZ.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum >= 4" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/25/Tbr9i7jPJuf4E2x.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<image v-if="clickNum >= 5" class="dormitory dormitoryBg fade-in" style="right: -150upx; bottom: 0upx;" src="https://i.loli.net/2021/01/25/bG3lWOTdH6PJ9hV.png"
+			 mode="aspectFit" @click="checkDorm"></image>
+			<view v-if="picChecked && clickNum >= 5" class="footer fade-in">
+				<image src="../../static/phase2/arrowBack.png" style="width: 80upx; height: 80upx;" @click="goBack"></image>
 				<image src="../../static/phase2/arrowNext.png" class="heartbeat" style="width: 80upx; height: 80upx; margin-left: 50upx;"
-				 @tap="transferScene"></image>
+				 @click="transferScene"></image>
 			</view>
 			<view v-if="!picChecked" class="fade-in" style="animation-delay: 0.7s;">
 				<image class="gesture heartbeat" src="../../static/phase2/gesture.png"></image>
@@ -153,6 +153,15 @@
 		height: 800upx;
 		right: -130upx;
 		bottom: -80upx;
+		transition: 0.5s;
+	}
+
+	.dormitoryDark {
+		position: fixed;
+		width: 1000upx;
+		height: 800upx;
+		right: -125upx;
+		bottom: -91upx;
 		transition: 0.5s;
 	}
 
